@@ -1,0 +1,38 @@
+@import "fonts/montserrat.css";
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", "sans-serif", "Roboto";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+:root {
+  --color: #1d2b41;
+
+  --color-t: #ff6e00;
+  --color-ct: #0091ff;
+
+  --color-white: #ffffff;
+  --golor-grey: #888888;
+  --color-black: #1a1a1a;
+  --color-red: #9f281a;
+
+  --color-bomb: #f7580b;
+  --color-defuse: #08a7f4;
+
+  --color-moneys: #a7d32e;
+  --color-spent: #ef281a;
+}

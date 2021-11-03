@@ -1,0 +1,273 @@
+@import "../../fonts/montserrat.css";
+@import "../../fonts/anton.css";
+@import "../../fonts/concertone.css";
+
+.matchBar {
+  position: fixed;
+  top: 30px;
+  left: 480px;
+  height: 50px;
+  width: 960px;
+  background-color: var(--color);
+  border-radius: 5px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 425px 110px 425px;
+}
+
+.roundInfo {
+  color: white;
+  font-family: "Concert One";
+  width: 110px;
+}
+
+.roundNo {
+  font-size: 13px;
+}
+
+.roundTimer {
+  font-size: 27px;
+}
+
+.team {
+  display: grid;
+  align-items: center;
+  width: 428px;
+  color: var(--color-white);
+  font-family: "Concert One";
+  font-size: 30px;
+}
+
+#teamLeft {
+  grid-template-columns: 56px 266px 70px 34px;
+}
+
+#teamRight {
+  grid-template-columns: 34px 70px 266px 56px;
+}
+
+.teamName {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.teamSeries {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: var(--color);
+  border-radius: 50%;
+}
+
+.dotWin {
+  background-color: white;
+}
+
+.tBackground {
+  background-color: var(--color-t);
+}
+
+.ctBackground {
+  background-color: var(--color-ct);
+}
+
+.t {
+  color: var(--color-t);
+}
+
+.ct {
+  color: var(--color-ct);
+  fill: var(--color-ct);
+}
+
+.teamLogo {
+  width: 35px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.infoBar {
+  position: fixed;
+  top: 5px;
+  left: 605px;
+  height: 23px;
+  width: 710px;
+  background-color: var(--color);
+  color: var(--color-white);
+  font-family: "Concert One";
+  font-size: 10px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 305px 100px 305px;
+  border-radius: 5px;
+}
+
+.logo {
+  width: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  justify-self: center;
+}
+
+.teamInfoBar {
+  width: 320px;
+  height: 50px;
+  top: 82px;
+  left: 800px;
+  position: fixed;
+  border-radius: 5px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 96px 118px 96px;
+  background-color: var(--color);
+  font-family: "Concert One";
+  color: white;
+}
+
+.info {
+  display: grid;
+  width: 100px;
+  align-items: center;
+  justify-items: center;
+  font-size: 15px;
+  color: var(--color-moneys);
+  grid-template-rows: 25px 25px;
+}
+
+.left {
+  grid-template-columns: 70px 36px;
+}
+
+.right {
+  grid-template-columns: 36px 70px;
+}
+
+.equipmentInfo {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.lossBonusInfo {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.equipmentImage {
+  filter: brightness(0) invert(1);
+  width: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  justify-self: center;
+}
+
+.titles {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: 22px 27px;
+}
+
+.tImage {
+  filter: brightness(0) saturate(100%) invert(55%) sepia(35%) saturate(6675%)
+    hue-rotate(359deg) brightness(101%) contrast(102%);
+}
+
+.ctImage {
+  filter: brightness(0) saturate(100%) invert(31%) sepia(46%) saturate(3818%)
+    hue-rotate(219deg) brightness(100%) contrast(102%);
+}
+
+.bombBar {
+  width: 960px;
+  height: 20px;
+  display: grid;
+  top: 82px;
+  position: fixed;
+  left: 480px;
+  border-radius: 5px;
+  background-color: var(--color);
+  column-gap: 10px;
+  grid-template-columns: 430px 35px 35px 430px;
+  align-items: center;
+  justify-items: center;
+}
+
+.bombTimer {
+  height: 10px;
+  width: 420px;
+  border-radius: 2px;
+  background-color: #ff6e00;
+}
+
+.defuseTimer {
+  height: 10px;
+  width: 420px;
+  border-radius: 2px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.bombImage {
+  width: 20px;
+  filter: brightness(0) saturate(100%) invert(86%) sepia(42%) saturate(2787%)
+    hue-rotate(330deg) brightness(90%) contrast(94%);
+}
+
+.defuserImage {
+  width: 20px;
+  filter: brightness(0) saturate(100%) invert(47%) sepia(15%) saturate(1325%)
+    hue-rotate(181deg) brightness(94%) contrast(87%);
+}
+
+.roundBomb {
+  width: 110px;
+  background-color: var(--color-red);
+  height: 50px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.roundBombImage {
+  width: 90px;
+  height: 40px;
+  filter: brightness(0) invert(100%);
+}
+
+.bombClass {
+  font-size: 25px;
+}
+
+/*
+font-family: "Concert One";
+
+Idk
+100px 110px 100px
+
+matchBar
+1920 - 960 = 960 / 2 = 480
+
+
+
+
+infoBar
+*/

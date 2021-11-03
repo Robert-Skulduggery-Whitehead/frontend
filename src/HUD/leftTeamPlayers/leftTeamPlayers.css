@@ -1,0 +1,169 @@
+@import "../../fonts/concertone.css";
+
+.ct {
+  filter: brightness(0) saturate(100%) invert(37%) sepia(36%) saturate(3816%)
+    hue-rotate(188deg) brightness(105%) contrast(102%);
+  color: var(--color-ct);
+}
+
+.t {
+  filter: brightness(0) saturate(100%) invert(46%) sepia(29%) saturate(7273%)
+    hue-rotate(6deg) brightness(110%) contrast(102%);
+  color: var(--color-t);
+}
+
+.ctBackground {
+  background-color: var(--color-ct);
+}
+
+.tBackground {
+  background-color: var(--color-t);
+}
+
+.playersContainer {
+  width: 290px;
+  height: 446px;
+  display: grid;
+  align-items: center;
+  position: fixed;
+  left: 20px;
+  bottom: 38px;
+  grid-template-rows: 86px 86px 86px 86px 86px;
+  row-gap: 4px;
+}
+
+.playerAlive {
+  height: 86px;
+  width: 290px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: 30px 1px 55px;
+  background-color: var(--color);
+  border-radius: 5px;
+  font-family: "Concert One";
+  color: white;
+}
+
+.playerATop {
+  height: 30px;
+  width: 290px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 35px 20px 120px 115px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.playerHP {
+  filter: drop-shadow(0px 0px 1px black);
+  justify-self: center;
+  font-size: 20px;
+}
+
+.playerNo {
+  justify-self: center;
+  filter: drop-shadow(0px 0px 1px black);
+}
+
+.playerName {
+  justify-self: start;
+  align-self: center;
+  font-size: 18px;
+  filter: drop-shadow(0px 0px 1px black);
+}
+
+.weaponPrimary {
+  max-height: 28px;
+  filter: brightness(0) saturate(100%) invert(73%) sepia(1%) saturate(1369%)
+    hue-rotate(244deg) brightness(85%) contrast(78%);
+  justify-self: end;
+  filter: drop-shadow(0px 0px 1px black);
+}
+
+.active {
+  filter: brightness(0) invert(100%);
+  filter: drop-shadow(0px 0px 1px black);
+}
+
+.bar {
+  width: 290px;
+  background-color: white;
+  height: 1px;
+}
+
+.playerABottom {
+  width: 55px;
+  width: 290px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 35px 60px 60px 135px;
+  grid-template-rows: 28px 28px;
+  grid-template-areas:
+    "equipment stats stats util"
+    "armour cash spent roundKills";
+}
+
+.playerEquipment {
+  grid-area: equipment;
+}
+
+.equipmentImage {
+  max-height: 25px;
+  filter: brightness(0) invert(100%);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.playerStats {
+  grid-area: stats;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 15px 15px 15px 15px 15px 15px;
+}
+
+.playerUtil {
+  grid-area: util;
+  display: grid;
+  align-items: center;
+  justify-items: end;
+  grid-template-columns: 25px 25px 25px 25px;
+}
+
+.utilImage {
+  max-height: 20px;
+  filter: brightness(0) invert(100%);
+}
+
+.playerArmour {
+  grid-area: armour;
+}
+
+.armourImage {
+  max-height: 20px;
+  filter: brightness(0) invert(100%);
+}
+
+.playerCash {
+  grid-area: cash;
+  color: var(--color-moneys);
+}
+
+.playerSpent {
+  grid-area: spent;
+}
+
+.roundKills {
+  grid-area: roundKills;
+  display: grid;
+  grid-template-columns: 25px 20px;
+  align-items: center;
+  justify-items: center;
+}
+
+.playerDead {
+}
