@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import "./leftTeamPlayers.css";
 
 let socket = require("socket.io-client")("http://127.0.0.1:3001");
@@ -319,4 +319,4 @@ export default class LeftTeamPlayers extends React.Component {
       return <div>Placeholder</div>;
     }
   }
-}
+}*/

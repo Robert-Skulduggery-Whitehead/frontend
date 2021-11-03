@@ -1,11 +1,11 @@
 import React from "react";
 import Matchbar from "../matchbar/matchbar";
-import Allplayers from "../allplayers/allplayers";
-import LeftTeamPlayers from "../leftTeamPlayers/leftTeamPlayers";
-import RightTeamPlayers from "../rightTeamPlayers/rightTeamPlayers";
-import Map from "../map/map";
-import MapPicks from "../mapPicks/mapPicks";
-import PlayersAlive from "../playersAlive/playersAlive";
+//import Allplayers from "../allplayers/allplayers";
+//import LeftTeamPlayers from "../leftTeamPlayers/leftTeamPlayers";
+//import RightTeamPlayers from "../rightTeamPlayers/rightTeamPlayers";
+//import Map from "../map/map";
+//import MapPicks from "../mapPicks/mapPicks";
+//import PlayersAlive from "../playersAlive/playersAlive";
 
 //import db from 'monk'
 
@@ -59,9 +59,9 @@ export default class Layout extends React.Component {
       this.setState({
         allplayers: data,
       });
-      for (let playerID in Object.keys(data)) {
-        if (data[playerID].observer_slot == 1) {
-          if (data[playerID].team == "CT") {
+      for (let playerID of Object.keys(data)) {
+        if (data[playerID].observer_slot === 1) {
+          if (data[playerID].team === "CT") {
             this.setState({
               sides: {
                 left: "ct",
@@ -114,7 +114,14 @@ export default class Layout extends React.Component {
   }
 
   render() {
-    if (this.state.render) {
+    if (
+      Object.keys(this.state.allplayers).length !== 0 ||
+      Object.keys(this.state.player).length !== 0 ||
+      Object.keys(this.state.map).length !== 0 ||
+      Object.keys(this.state.bomb).length !== 0 ||
+      Object.keys(this.state.phase_countdowns).length !== 0 ||
+      Object.keys(this.state.round).length !== 0
+    ) {
       return (
         <div>
           <Matchbar

@@ -1,7 +1,18 @@
-@import "../../fonts/montserrat.css";
-@import "../../fonts/anton.css";
 @import "../../fonts/concertone.css";
 
+/*
+(team) (gameinfo) (team)
+        (gameinfo round)
+      (seriesinfo)
+
+Total width = 944
+Team  = 340
+Gameinfo = 264px
+Gameinfo round = 496px
+Seriesinfo (BO3) = 530px
+*/
+
+/*
 .matchBar {
   position: fixed;
   top: 30px;
