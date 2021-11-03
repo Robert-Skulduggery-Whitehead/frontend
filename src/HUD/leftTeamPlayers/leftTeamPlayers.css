@@ -1,14 +1,12 @@
 @import "../../fonts/concertone.css";
 
 .ct {
-  filter: brightness(0) saturate(100%) invert(37%) sepia(36%) saturate(3816%)
-    hue-rotate(188deg) brightness(105%) contrast(102%);
+  filter: var(--ct-filter);
   color: var(--color-ct);
 }
 
 .t {
-  filter: brightness(0) saturate(100%) invert(46%) sepia(29%) saturate(7273%)
-    hue-rotate(6deg) brightness(110%) contrast(102%);
+  filter: var(--t-filter);
   color: var(--color-t);
 }
 

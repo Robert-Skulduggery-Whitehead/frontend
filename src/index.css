@@ -35,4 +35,9 @@ code {
 
   --color-moneys: #a7d32e;
   --color-spent: #ef281a;
+
+  --ct-filer: brightness(0) saturate(100%) invert(37%) sepia(36%)
+    saturate(3816%) hue-rotate(188deg) brightness(105%) contrast(102%);
+  --t-filer: brightness(0) saturate(100%) invert(46%) sepia(29%) saturate(7273%)
+    hue-rotate(6deg) brightness(110%) contrast(102%);
 }

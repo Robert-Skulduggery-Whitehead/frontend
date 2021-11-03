@@ -15,6 +15,7 @@ export default class Layout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      //data from csgo
       phase_countdowns: {},
       bomb: {},
       grenades: {},
@@ -22,7 +23,24 @@ export default class Layout extends React.Component {
       player: {},
       round: {},
       map: {},
+      //render?
       render: false,
+      //sides
+      sides: {
+        left: "ct",
+        right: "t",
+      },
+      //team info
+      teams: {
+        left: {
+          name: "Bravado",
+          img: "bravado.png",
+        },
+        right: {
+          name: "Bravado",
+          img: "bravado.png",
+        },
+      },
     };
   }
 
@@ -37,21 +55,60 @@ export default class Layout extends React.Component {
       });
     });
 
-    socket.on("allplayers", (allplayers) => {
+    socket.on("allplayers", (data) => {
       this.setState({
-        allplayers: allplayers,
+        allplayers: data,
+      });
+      for (let playerID in Object.keys(data)) {
+        if (data[playerID].observer_slot == 1) {
+          if (data[playerID].team == "CT") {
+            this.setState({
+              sides: {
+                left: "ct",
+                right: "t",
+              },
+            });
+          } else {
+            this.setState({
+              sides: {
+                left: "ct",
+                right: "t",
+              },
+            });
+          }
+        }
+      }
+      //Use helper class to get name from database
+    });
+
+    socket.on("player", (data) => {
+      this.setState({
+        player: data,
+      });
+      //Use helper class to get name from database
+    });
+
+    socket.on("map", (data) => {
+      this.setState({
+        map: data,
       });
     });
 
-    socket.on("player", (player) => {
+    socket.on("bomb", (data) => {
       this.setState({
-        player: player,
+        bomb: data,
       });
     });
 
-    socket.on("map", (map) => {
+    socket.on("phase_countdowns", (data) => {
       this.setState({
-        map: map,
+        phase_countdowns: data,
+      });
+    });
+
+    socket.on("round", (data) => {
+      this.setState({
+        round: data,
       });
     });
   }
@@ -60,8 +117,15 @@ export default class Layout extends React.Component {
     if (this.state.render) {
       return (
         <div>
-          <Matchbar />
-          <LeftTeamPlayers></LeftTeamPlayers>
+          <Matchbar
+            allplayers={this.state.allplayers}
+            map={this.state.map}
+            bomb={this.state.bomb}
+            phase_countdowns={this.state.phase_countdowns}
+            round={this.state.round}
+            sides={this.state.sides}
+            teams={this.state.teams}
+          />
         </div>
       );
     } else {
