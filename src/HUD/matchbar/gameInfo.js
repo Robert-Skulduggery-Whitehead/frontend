@@ -1,5 +1,4 @@
 import React from "react";
-import Timer from "./timer";
 
 export default class GameInfo extends React.Component {
   constructor(props) {
@@ -14,10 +13,6 @@ export default class GameInfo extends React.Component {
   componentDidMount() {}
 
   render() {
-    return (
-      <div class="gameInfo">
-        <Timer></Timer>
-      </div>
-    );
+    return <div></div>;
   }
 }

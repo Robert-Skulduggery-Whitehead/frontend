@@ -36,8 +36,13 @@ code {
   --color-moneys: #a7d32e;
   --color-spent: #ef281a;
 
-  --ct-filer: brightness(0) saturate(100%) invert(37%) sepia(36%)
+  --ct-filter: brightness(0) saturate(100%) invert(37%) sepia(36%)
     saturate(3816%) hue-rotate(188deg) brightness(105%) contrast(102%);
-  --t-filer: brightness(0) saturate(100%) invert(46%) sepia(29%) saturate(7273%)
-    hue-rotate(6deg) brightness(110%) contrast(102%);
+  --t-filter: brightness(0) saturate(100%) invert(46%) sepia(29%)
+    saturate(7273%) hue-rotate(6deg) brightness(110%) contrast(102%);
+
+  --bomb-filter: brightness(0) saturate(100%) invert(19%) sepia(74%)
+    saturate(6224%) hue-rotate(357deg) brightness(106%) contrast(87%);
+  --defuse-filter: brightness(0) saturate(100%) invert(61%) sepia(96%)
+    saturate(3263%) hue-rotate(167deg) brightness(98%) contrast(97%);
 }

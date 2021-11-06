@@ -12,6 +12,140 @@ Gameinfo round = 496px
 Seriesinfo (BO3) = 530px
 */
 
+/*Side colours*/
+.t {
+  color: var(--color-t);
+}
+
+.ct {
+  color: var(--color-ct);
+}
+
+/*Keyframes*/
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*Timer css*/
+.timer {
+  position: fixed;
+  top: 10px;
+  left: 915px;
+  background-color: black;
+  width: 90px;
+  height: 90px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.timerShadow {
+  position: fixed;
+  top: 8px;
+  left: 913px;
+  background-color: white;
+  width: 94px;
+  height: 94px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.timerText {
+  color: white;
+  font-family: "Concert One";
+  font-size: 20px;
+}
+
+.timerBombImage {
+  filter: var(--bomb-filter);
+  height: 45px;
+  animation: blink 1s;
+  animation-iteration-count: infinite;
+}
+
+.timerDefuseImage {
+  filter: var(--defuse-filter);
+  height: 45px;
+  animation: blink 1s;
+  animation-iteration-count: infinite;
+}
+
+/*Team css*/
+.team {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  border-radius: 5px;
+  top: 25px;
+  height: 60px;
+  width: 470px;
+  display: grid;
+  align-items: center;
+}
+
+.teamLeft {
+  left: 480px;
+  grid-template-columns: 100px 220px 130px;
+  column-gap: 10px;
+  grid-template-areas: "logo name score";
+}
+
+.teamRight {
+  right: 480px;
+  grid-template-columns: 130px 220px 100px;
+  column-gap: 10px;
+  grid-template-areas: "score name logo";
+}
+
+.teamLogo {
+  grid-area: logo;
+}
+
+.teamLeftLogo {
+}
+
+.teamRightLogo {
+}
+
+.teamname {
+  grid-area: name;
+  font-family: "Concert One";
+}
+
+.teamScore {
+  grid-area: score;
+  height: 60px;
+  background-color: black;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-family: "Concert One";
+  font-size: 25px;
+}
+
+.teamLeftScore {
+  clip-path: polygon(25% 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.teamLeftScoreShadow {
+}
+
+.teamRightScore {
+  clip-path: polygon(0 0, 75% 0, 100% 100%, 0% 100%);
+}
+
+.teamRightScoreShadow {
+}
 /*
 .matchBar {
   position: fixed;
