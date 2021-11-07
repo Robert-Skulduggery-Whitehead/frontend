@@ -3,6 +3,7 @@ import "./matchbar.css";
 import Timer from "./timer";
 import Team from "./team";
 import GameInfo from "./gameInfo";
+import SeriesInfo from "./seriesInfo";
 export default class Matchbar extends React.Component {
   constructor(props) {
     //props: allplayers, map, bomb, phase_countdowns, round, sides, teams, series
@@ -89,10 +90,16 @@ export default class Matchbar extends React.Component {
   render() {
     return (
       <div>
+        <SeriesInfo
+          series={this.props.series}
+          teams={this.props.teams}
+          round={this.props.round}
+        ></SeriesInfo>
         <GameInfo
           series={this.props.series}
           teams={this.props.teams}
           sides={this.props.sides}
+          round={this.props.map.round}
         ></GameInfo>
         <Team
           class={"teamLeft"}

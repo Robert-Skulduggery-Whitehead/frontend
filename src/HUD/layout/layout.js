@@ -52,16 +52,22 @@ export default class Layout extends React.Component {
             map: "mirage",
             picked: "bravado",
             winner: "bravado",
+            winnerScore: 16,
+            loserScore: 7,
           },
           game2: {
             map: "dust",
             picked: "ekasi esports",
             winner: "ekasi esports",
+            winnerScore: 16,
+            loserScore: 7,
           },
           game3: {
             map: "inferno",
             picked: "decider",
             winner: "",
+            winnerScore: 16,
+            loserScore: 7,
           },
         },
       },
@@ -113,6 +119,17 @@ export default class Layout extends React.Component {
     });
 
     socket.on("map", (data) => {
+      if (data.round === 15 && this.state.map.round !== data.round) {
+        this.swapTeams();
+      }
+      if (data.round === 30 && this.state.map.round !== data.round) {
+        this.swapTeams();
+      }
+      if (data.round > 30) {
+        if (data.round % 6 === 0 && data.round !== this.state.state.map.round) {
+          this.swapTeams();
+        }
+      }
       this.setState({
         map: data,
       });
@@ -134,6 +151,17 @@ export default class Layout extends React.Component {
       this.setState({
         round: data,
       });
+    });
+  }
+
+  swapTeams() {
+    let tempRight = this.state.teams.left;
+    let tempLeft = this.state.teams.right;
+    this.setState({
+      teams: {
+        left: tempLeft,
+        right: tempRight,
+      },
     });
   }
 
