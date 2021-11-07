@@ -33,12 +33,36 @@ export default class Layout extends React.Component {
       //team info
       teams: {
         left: {
-          name: "Bravado",
+          name: "bravado",
           img: "bravado.png",
+          wins: 1,
         },
         right: {
-          name: "Bravado",
-          img: "bravado.png",
+          name: "ekasi esports",
+          img: "ekasiesports.png",
+          wins: 1,
+        },
+      },
+      //Series Info (Current map = gameXWinner: "live")
+      series: {
+        bestOf: 3,
+        current: 3,
+        games: {
+          game1: {
+            map: "mirage",
+            picked: "bravado",
+            winner: "bravado",
+          },
+          game2: {
+            map: "dust",
+            picked: "ekasi esports",
+            winner: "ekasi esports",
+          },
+          game3: {
+            map: "inferno",
+            picked: "decider",
+            winner: "",
+          },
         },
       },
     };
@@ -71,8 +95,8 @@ export default class Layout extends React.Component {
           } else {
             this.setState({
               sides: {
-                left: "ct",
-                right: "t",
+                left: "t",
+                right: "ct",
               },
             });
           }
@@ -115,11 +139,11 @@ export default class Layout extends React.Component {
 
   render() {
     if (
-      Object.keys(this.state.allplayers).length !== 0 ||
-      Object.keys(this.state.player).length !== 0 ||
-      Object.keys(this.state.map).length !== 0 ||
-      Object.keys(this.state.bomb).length !== 0 ||
-      Object.keys(this.state.phase_countdowns).length !== 0 ||
+      Object.keys(this.state.allplayers).length !== 0 &&
+      Object.keys(this.state.player).length !== 0 &&
+      Object.keys(this.state.map).length !== 0 &&
+      Object.keys(this.state.bomb).length !== 0 &&
+      Object.keys(this.state.phase_countdowns).length !== 0 &&
       Object.keys(this.state.round).length !== 0
     ) {
       return (
@@ -132,6 +156,7 @@ export default class Layout extends React.Component {
             round={this.state.round}
             sides={this.state.sides}
             teams={this.state.teams}
+            series={this.state.series}
           />
         </div>
       );

@@ -5,16 +5,9 @@ import Team from "./team";
 import GameInfo from "./gameInfo";
 export default class Matchbar extends React.Component {
   constructor(props) {
-    //props: allplayers, map, bomb, phase_countdowns, round, sides, teams
+    //props: allplayers, map, bomb, phase_countdowns, round, sides, teams, series
     super(props);
     this.state = {
-      allplayers: this.props.allplayers,
-      map: this.props.map,
-      bomb: this.props.bomb,
-      phase_countdowns: this.props.phase_countdowns,
-      round: this.props.round,
-      sides: this.props.sides,
-      teams: this.props.teams,
       //Equipment values for sides
       leftEquipValue: 0,
       rightEquipValue: 0,
@@ -96,7 +89,11 @@ export default class Matchbar extends React.Component {
   render() {
     return (
       <div>
-        <GameInfo></GameInfo>
+        <GameInfo
+          series={this.props.series}
+          teams={this.props.teams}
+          sides={this.props.sides}
+        ></GameInfo>
         <Team
           class={"teamLeft"}
           team={this.props.teams.left}

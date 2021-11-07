@@ -39,7 +39,7 @@ Seriesinfo (BO3) = 530px
   position: fixed;
   top: 10px;
   left: 915px;
-  background-color: black;
+  background-color: #1a1a1a;
   width: 90px;
   height: 90px;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
@@ -83,7 +83,7 @@ Seriesinfo (BO3) = 530px
 
 /*Team css*/
 .team {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   border-radius: 5px;
   top: 25px;
@@ -95,31 +95,45 @@ Seriesinfo (BO3) = 530px
 
 .teamLeft {
   left: 480px;
-  grid-template-columns: 100px 220px 130px;
+  grid-template-columns: 60px 260px 130px;
   column-gap: 10px;
   grid-template-areas: "logo name score";
 }
 
 .teamRight {
   right: 480px;
-  grid-template-columns: 130px 220px 100px;
+  grid-template-columns: 130px 260px 60px;
   column-gap: 10px;
   grid-template-areas: "score name logo";
 }
 
 .teamLogo {
   grid-area: logo;
+  display: grid;
+  align-items: center;
+}
+
+.teamLogoImage {
+  max-height: 50px;
 }
 
 .teamLeftLogo {
+  justify-items: start;
+  margin-left: 10px;
 }
 
 .teamRightLogo {
+  justify-items: end;
+  margin-right: 10px;
 }
 
-.teamname {
+.teamName {
   grid-area: name;
   font-family: "Concert One";
+  color: white;
+  font-size: 30px;
+  justify-self: center;
+  text-transform: uppercase;
 }
 
 .teamScore {
@@ -137,14 +151,93 @@ Seriesinfo (BO3) = 530px
   clip-path: polygon(25% 0, 100% 0%, 100% 100%, 0% 100%);
 }
 
-.teamLeftScoreShadow {
+.teamLeftScoreShadowt {
+  filter: drop-shadow(-2px 0px 1px var(--color-t));
+}
+
+.teamLeftScoreShadowct {
+  filter: drop-shadow(-2px 0px 1px var(--color-ct));
 }
 
 .teamRightScore {
   clip-path: polygon(0 0, 75% 0, 100% 100%, 0% 100%);
 }
 
-.teamRightScoreShadow {
+.teamRightScoreShadowt {
+  filter: drop-shadow(2px 0px 1px var(--color-t));
+}
+
+.teamRightScoreShadowct {
+  filter: drop-shadow(2px 0px 1px var(--color-ct));
+}
+
+/*Game info */
+/*(10px)(100px)(10px)(90px)(10px)(60px)(10px)(90)(10px)(100px)(10px)*/
+.gameInfo {
+  position: fixed;
+  width: 500px;
+  height: 25px;
+  left: 710px;
+  top: 85px;
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-family: "Concert One";
+  font-size: 15px;
+  color: rgb(189, 189, 189);
+  grid-template-columns: 100px 100px 60px 100px 100px;
+  column-gap: 10px;
+}
+
+.seriesLength1 {
+  grid-template-columns: 20px;
+}
+
+.seriesLength3 {
+  grid-template-columns: 20px 20px;
+}
+
+.seriesLength5 {
+  grid-template-columns: 20px 20px 20px;
+}
+
+.seriesWinsLeft {
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  column-gap: 5px;
+}
+
+.seriesWinsRight {
+  display: grid;
+  align-items: center;
+  justify-items: end;
+  column-gap: 5px;
+}
+
+.gameInfoRounds {
+  justify-self: end;
+}
+
+.gameInfoSeriesLength {
+  justify-self: start;
+}
+
+.seriesDot {
+  height: 10px;
+  width: 20px;
+  background-color: #bbb;
+  border-radius: 20%;
+}
+
+.ctDot {
+  background-color: var(--color-ct);
+}
+
+.tDot {
+  background-color: var(--color-t);
 }
 /*
 .matchBar {
