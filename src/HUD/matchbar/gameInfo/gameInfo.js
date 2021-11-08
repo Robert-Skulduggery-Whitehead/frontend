@@ -1,4 +1,5 @@
 import React from "react";
+import "./gameInfo.css";
 
 export default class GameInfo extends React.Component {
   constructor(props) {

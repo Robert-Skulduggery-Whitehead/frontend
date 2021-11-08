@@ -1,4 +1,5 @@
 import React from "react";
+import "./team.css";
 
 export default class Team extends React.Component {
   constructor(props) {

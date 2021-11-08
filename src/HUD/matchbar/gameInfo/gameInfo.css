@@ -1,0 +1,67 @@
+/*(10px)(100px)(10px)(90px)(10px)(60px)(10px)(90)(10px)(100px)(10px)*/
+.gameInfo {
+  position: fixed;
+  width: 500px;
+  height: 25px;
+  left: 710px;
+  top: 85px;
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-family: "Concert One";
+  font-size: 15px;
+  color: rgb(189, 189, 189);
+  grid-template-columns: 100px 100px 60px 100px 100px;
+  column-gap: 10px;
+}
+
+.seriesLength1 {
+  grid-template-columns: 20px;
+}
+
+.seriesLength3 {
+  grid-template-columns: 20px 20px;
+}
+
+.seriesLength5 {
+  grid-template-columns: 20px 20px 20px;
+}
+
+.seriesWinsLeft {
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  column-gap: 5px;
+}
+
+.seriesWinsRight {
+  display: grid;
+  align-items: center;
+  justify-items: end;
+  column-gap: 5px;
+}
+
+.gameInfoRounds {
+  justify-self: end;
+}
+
+.gameInfoSeriesLength {
+  justify-self: start;
+}
+
+.seriesDot {
+  height: 10px;
+  width: 20px;
+  background-color: rgb(189, 189, 189);
+  border-radius: 20%;
+}
+
+.ctDot {
+  background-color: var(--color-ct);
+}
+
+.tDot {
+  background-color: var(--color-t);
+}

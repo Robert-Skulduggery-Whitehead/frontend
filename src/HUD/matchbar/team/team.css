@@ -1,0 +1,88 @@
+.team {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  border-radius: 5px;
+  top: 25px;
+  height: 60px;
+  width: 470px;
+  display: grid;
+  align-items: center;
+}
+
+.teamLeft {
+  left: 480px;
+  grid-template-columns: 60px 260px 130px;
+  column-gap: 10px;
+  grid-template-areas: "logo name score";
+}
+
+.teamRight {
+  right: 480px;
+  grid-template-columns: 130px 260px 60px;
+  column-gap: 10px;
+  grid-template-areas: "score name logo";
+}
+
+.teamLogo {
+  grid-area: logo;
+  display: grid;
+  align-items: center;
+}
+
+.teamLogoImage {
+  max-height: 50px;
+}
+
+.teamLeftLogo {
+  justify-items: start;
+  margin-left: 10px;
+}
+
+.teamRightLogo {
+  justify-items: end;
+  margin-right: 10px;
+}
+
+.teamName {
+  grid-area: name;
+  font-family: "Concert One";
+  color: white;
+  font-size: 30px;
+  justify-self: center;
+  text-transform: uppercase;
+}
+
+.teamScore {
+  grid-area: score;
+  height: 60px;
+  background-color: black;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-family: "Concert One";
+  font-size: 25px;
+}
+
+.teamLeftScore {
+  clip-path: polygon(25% 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.teamLeftScoreShadowt {
+  filter: drop-shadow(-2px 0px 1px var(--color-t));
+}
+
+.teamLeftScoreShadowct {
+  filter: drop-shadow(-2px 0px 1px var(--color-ct));
+}
+
+.teamRightScore {
+  clip-path: polygon(0 0, 75% 0, 100% 100%, 0% 100%);
+}
+
+.teamRightScoreShadowt {
+  filter: drop-shadow(2px 0px 1px var(--color-t));
+}
+
+.teamRightScoreShadowct {
+  filter: drop-shadow(2px 0px 1px var(--color-ct));
+}

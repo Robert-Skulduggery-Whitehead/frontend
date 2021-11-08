@@ -1,0 +1,67 @@
+/*Bo1=200px, Bo3=600pxpxpx, Bo5=1000px*/
+/*Each bar is 80px*/
+
+.seriesInfo {
+  position: fixed;
+  display: grid;
+  top: 110px;
+  background-color: #1a1a1a;
+  height: 45px;
+  align-items: center;
+  justify-items: center;
+  border-radius: 5px;
+}
+
+.seriesInfo1 {
+  width: 200px;
+  left: 860px;
+  grid-template-columns: 200px;
+}
+
+.seriesInfo3 {
+  width: 600px;
+  left: 660px;
+  grid-template-columns: 200px 200px 200px;
+}
+
+.seriesInfo5 {
+  width: 1000px;
+  left: 460px;
+  grid-template-columns: 200px 200px 200px 200px 200px;
+}
+
+.seriesMapInfo {
+  display: grid;
+  height: 40px;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: 20px 20px;
+  color: white;
+  font-family: "Concert One";
+  margin-top: 2px;
+}
+
+.seriesMapInfoTop {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.seriesMapInfoBottom {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.seriesMapInfoImage {
+  max-height: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.seriesMapInfoCurrent {
+  color: red;
+  font-size: 15px;
+}
+
+.seriesMapInfoPickedBy {
+  color: rgb(189, 189, 189);
+}

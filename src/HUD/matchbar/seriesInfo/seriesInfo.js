@@ -1,4 +1,5 @@
 import React from "react";
+import "./seriesInfo.css";
 
 export default class SeriesInfo extends React.Component {
   constructor(props) {

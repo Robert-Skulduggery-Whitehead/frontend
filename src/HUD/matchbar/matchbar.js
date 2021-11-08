@@ -1,91 +1,21 @@
 import React from "react";
 import "./matchbar.css";
-import Timer from "./timer";
-import Team from "./team";
-import GameInfo from "./gameInfo";
-import SeriesInfo from "./seriesInfo";
+import Timer from "./timer/timer";
+import Team from "./team/team";
+import GameInfo from "./gameInfo/gameInfo";
+import SeriesInfo from "./seriesInfo/seriesInfo";
 export default class Matchbar extends React.Component {
   constructor(props) {
     //props: allplayers, map, bomb, phase_countdowns, round, sides, teams, series
     super(props);
-    this.state = {
-      //Equipment values for sides
-      leftEquipValue: 0,
-      rightEquipValue: 0,
-      //Loss bonus for teams
-      leftLossBonus: 0,
-      rightLossBonus: 0,
-    };
+    this.state = {};
   }
 
   componentDidCatch(error, errorInfo) {
     //
   }
 
-  componentDidMount() {
-    //Equipment values for teams
-    //let leftE, rightE;
-    /*for (let key of Object.keys(this.state.allplayers)) {
-      if (
-        this.state.allplayers[key].team === this.state.sides.left.toUpperCase()
-      ) {
-        leftE = leftE + this.state.allplayers[key].state.equip_value;
-      } else {
-        rightE = rightE + this.state.allplayers[key].state.equip_value;
-      }
-    }
-    this.setState({
-      leftEquipValue: leftE,
-      rightEquipValue: rightE,
-    });
-
-    if (this.state.sides.left == "ct") {
-      if (this.state.map.team_ct.consecutive_round_losses == 1) {
-        this.state.leftLossBonus = "1900";
-      } else if (this.state.map.team_ct.consecutive_round_losses == 2) {
-        this.state.leftLossBonus = "2400";
-      } else if (this.state.map.team_ct.consecutive_round_losses == 3) {
-        this.state.leftLossBonus = "2900";
-      } else if (this.state.map.team_ct.consecutive_round_losses >= 4) {
-        this.state.leftLossBonus = "3400";
-      }
-
-      if (this.state.map.team_t.consecutive_round_losses == 1) {
-        this.state.rightLossBonus = "1900";
-      } else if (this.state.map.team_t.consecutive_round_losses == 2) {
-        this.state.rightLossBonus = "2400";
-      } else if (this.state.map.team_t.consecutive_round_losses == 3) {
-        this.state.rightLossBonus = "2900";
-      } else if (this.state.map.team_t.consecutive_round_losses >= 4) {
-        this.state.rightLossBonus = "3400";
-      }
-    } else {
-      if (this.state.map.team_ct.consecutive_round_losses == 1) {
-        this.state.rightLossBonus = "1900";
-      } else if (this.state.map.team_ct.consecutive_round_losses == 2) {
-        this.state.rightLossBonus = "2400";
-      } else if (this.state.map.team_ct.consecutive_round_losses == 3) {
-        this.state.rightLossBonus = "2900";
-      } else if (this.state.map.team_ct.consecutive_round_losses >= 4) {
-        this.state.rightLossBonus = "3400";
-      }
-
-      if (this.state.map.team_t.consecutive_round_losses == 1) {
-        this.state.leftLossBonus = "1900";
-      } else if (this.state.map.team_t.consecutive_round_losses == 2) {
-        this.state.leftLossBonus = "2400";
-      } else if (this.state.map.team_t.consecutive_round_losses == 3) {
-        this.state.leftLossBonus = "2900";
-      } else if (this.state.map.team_t.consecutive_round_losses >= 4) {
-        this.state.leftLossBonus = "3400";
-      }
-    }*/
-    /*<Timer
-          round={this.props.round}
-          bomb={this.props.bomb}
-          phase_countdowns={this.props.phase_countdowns}
-        ></Timer>*/
-  }
+  componentDidMount() {}
 
   render() {
     return (

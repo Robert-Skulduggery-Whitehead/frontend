@@ -1,7 +1,8 @@
 import React from "react";
 import countdown from "easytimer.js";
-import bombImage from "../../images/svgs/icon_c4_default.svg";
-import defuseImage from "../../images/svgs/icon_defuse_default.svg";
+import bombImage from "../../../images/svgs/icon_c4_default.svg";
+import defuseImage from "../../../images/svgs/icon_defuse_default.svg";
+import "./timer.css";
 
 export default class Timer extends React.Component {
   constructor(props) {

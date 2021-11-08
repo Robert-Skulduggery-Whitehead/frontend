@@ -1,0 +1,45 @@
+.timer {
+  position: fixed;
+  top: 10px;
+  left: 915px;
+  background-color: #1a1a1a;
+  width: 90px;
+  height: 90px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.timerShadow {
+  position: fixed;
+  top: 8px;
+  left: 913px;
+  background-color: white;
+  width: 94px;
+  height: 94px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.timerText {
+  color: white;
+  font-family: "Concert One";
+  font-size: 20px;
+}
+
+.timerBombImage {
+  filter: var(--bomb-filter);
+  height: 45px;
+  animation: blink 1s;
+  animation-iteration-count: infinite;
+}
+
+.timerDefuseImage {
+  filter: var(--defuse-filter);
+  height: 45px;
+  animation: blink 1s;
+  animation-iteration-count: infinite;
+}
