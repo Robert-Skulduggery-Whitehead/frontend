@@ -1,4 +1,5 @@
 import React from "react";
+import AllPlayers from "../allplayers/allplayers";
 import Matchbar from "../matchbar/matchbar";
 //import Allplayers from "../allplayers/allplayers";
 //import LeftTeamPlayers from "../leftTeamPlayers/leftTeamPlayers";
@@ -176,6 +177,12 @@ export default class Layout extends React.Component {
     ) {
       return (
         <div>
+          <AllPlayers
+            allplayers={this.state.allplayers}
+            teams={this.state.teams}
+            map={this.state.map}
+            sides={this.state.sides}
+          ></AllPlayers>
           <Matchbar
             allplayers={this.state.allplayers}
             map={this.state.map}

@@ -1,0 +1,23 @@
+.allPlayers {
+  /*player bars = 70px*/
+}
+
+.allPlayersContainer {
+  position: fixed;
+  top: 540px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  width: 355px;
+  height: 362px;
+  row-gap: 3px;
+  grid-template-rows: 70px 70px 70px 70px 70px;
+}
+
+.allPlayersContainerLeft {
+  left: 20px;
+}
+
+.allPlayersContainerRight {
+  right: 20px;
+}

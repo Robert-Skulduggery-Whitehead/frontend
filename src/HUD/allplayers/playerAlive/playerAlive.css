@@ -1,0 +1,199 @@
+.gray {
+  color: gray;
+}
+
+.t {
+  color: var(--color-t);
+}
+.ct {
+  color: var(--color-ct);
+}
+
+.tBackground {
+  background-color: var(--color-t);
+}
+
+.ctBackground {
+  background-color: var(--color-ct);
+}
+
+.tShadow {
+  filter: drop-shadow(0px 0px 3px var(--color-t));
+}
+
+.ctShadow {
+  filter: drop-shadow(0px 0px 3px var(--color-ct));
+}
+
+.tOutline {
+  outline-color: var(--color-t);
+}
+
+.ctOutline {
+  outline-color: var(--color-ct);
+}
+
+.playerAliveContainer {
+  display: grid;
+  width: 355px;
+  height: 70px;
+  background-color: #1a1a1a;
+  border-radius: 5px;
+}
+
+.playerAliveContainerLeft {
+  display: grid;
+  grid-template-columns: 65px 70px 220px;
+  grid-template-areas: "image health rest";
+}
+
+.playerAliveContainerRight {
+  display: grid;
+  grid-template-columns: 220px 70px 65px;
+  grid-template-areas: "rest health image";
+}
+
+.playerAliveImageContainer {
+  grid-area: image;
+  display: grid;
+  align-items: end;
+}
+
+.playerAliveImage {
+  height: 65px;
+  width: 65px;
+}
+
+.playerAliveHealthContainer {
+  grid-area: health;
+  align-self: center;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  /*
+  
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  
+  */
+}
+
+.playerAliveHealth {
+  background-color: #1a1a1a;
+  width: 60px;
+  height: 60px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  color: white;
+  font-family: "Concert One";
+}
+
+.playerAliveRestContainer {
+  grid-area: rest;
+  display: grid;
+  align-items: center;
+  grid-template-rows: 30px 12px 28px;
+}
+
+.playerAliveTopContainer {
+  display: grid;
+  align-items: center;
+  color: white;
+  font-family: "Concert One";
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.playerAliveTopContainerLeft {
+  grid-template-columns: 100px 75px 40px;
+  grid-template-areas: "name kda kills";
+}
+
+.playerAliveTopContainerRight {
+  grid-template-columns: 40px 75px 100px;
+  grid-template-areas: "kills kda name";
+}
+
+.playerAliveName {
+  grid-area: name;
+}
+
+.playerAliveNameLeft {
+  justify-self: start;
+}
+
+.playerAliveNameRight {
+  justify-self: end;
+}
+
+.playerAliveKDA {
+  grid-area: kda;
+  justify-self: center;
+}
+
+.playerAliveRoundKillsContainer {
+  grid-area: kills;
+  display: grid;
+  align-items: center;
+  text-transform: lowercase;
+}
+
+.playerAliveRoundKillsContainerLeft {
+  justify-self: end;
+  justify-content: center;
+  grid-template-columns: 20px 10px 10px;
+  grid-template-areas: "img x kills";
+}
+
+.playerAliveRoundKillsContainerRight {
+  justify-self: start;
+  justify-content: center;
+  grid-template-columns: 10px 10px 20px;
+  grid-template-areas: "kills x img";
+}
+
+.playerAliveRoundKillsImage {
+  height: 15px;
+  grid-area: img;
+}
+
+.playerAliveRoundKills {
+  grid-area: kills;
+}
+
+.playerAliveHealthBarContainer {
+  display: grid;
+  align-items: center;
+}
+
+.playerAliveHealthBar {
+  width: 210px;
+  height: 5px;
+  border-radius: 5px;
+  outline-style: inset;
+  outline-width: 1px;
+}
+
+.playerAliveHealthBarLeft {
+  justify-self: start;
+}
+
+.playerAliveHealthBarRight {
+  justify-self: end;
+}
+
+.playerAliveBottomContainer {
+}
+
+.playerAliveEco {
+}
+
+.playerAliveUtilContainer {
+}
+
+.playerAliveEquipmentContainer {
+}
+
+.playerAliveWeaponContainer {
+}

@@ -1,7 +1,5 @@
 import React from "react";
 import countdown from "easytimer.js";
-import bombImage from "../../../images/svgs/icon_c4_default.svg";
-import defuseImage from "../../../images/svgs/icon_defuse_default.svg";
 import "./timer.css";
 
 export default class Timer extends React.Component {
@@ -136,11 +134,19 @@ export default class Timer extends React.Component {
       <div class="timerShadow">
         <div class="timer">
           {this.state.bombPlanted && !this.state.defuseState && (
-            <img class="timerBombImage" src={bombImage} alt=""></img>
+            <img
+              class="timerBombImage"
+              src="/svgs/icon_c4_default.svg"
+              alt=""
+            ></img>
           )}
           {this.state.defuseState && (
             <div>
-              <img class="timerDefuseImage" src={defuseImage} alt=""></img>
+              <img
+                class="timerDefuseImage"
+                src="/svgs/icon_defuse_default.svg"
+                alt=""
+              ></img>
             </div>
           )}
           {!this.state.bombPlanted && !this.state.defuseState && (

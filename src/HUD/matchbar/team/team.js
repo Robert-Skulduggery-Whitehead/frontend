@@ -12,7 +12,11 @@ export default class Team extends React.Component {
     return (
       <div class={"team " + this.props.class}>
         <div class={"teamLogo " + this.props.class + "Logo"}>
-          <img class="teamLogoImage" src={this.props.team.img} alt=""></img>
+          <img
+            class="teamLogoImage"
+            src={"./teamImages/" + this.props.team.img}
+            alt=""
+          ></img>
         </div>
         <div class="teamName">{this.props.team.name}</div>
         <div
