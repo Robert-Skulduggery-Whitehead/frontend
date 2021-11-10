@@ -106,12 +106,12 @@
 }
 
 .playerAliveTopContainerLeft {
-  grid-template-columns: 100px 75px 40px;
+  grid-template-columns: 95px 80px 40px;
   grid-template-areas: "name kda kills";
 }
 
 .playerAliveTopContainerRight {
-  grid-template-columns: 40px 75px 100px;
+  grid-template-columns: 40px 80px 95px;
   grid-template-areas: "kills kda name";
 }
 
@@ -184,16 +184,90 @@
 }
 
 .playerAliveBottomContainer {
+  display: grid;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.playerAliveBottomContainerLeft {
+  grid-template-columns: 12px 50px 65px 15px 60px;
+  grid-template-areas: "armour eco util equipment weapons";
+  justify-items: start;
+}
+
+.playerAliveBottomContainerRight {
+  grid-template-columns: 60px 15px 65px 50px 12px;
+  grid-template-areas: "weapons equipment util eco armour";
+  justify-items: end;
+}
+
+.playerAliveArmourContainer {
+  grid-area: armour;
+  display: grid;
+  align-items: center;
+}
+
+.playerAliveArmourImage {
+  width: 15px;
+  filter: brightness(0) invert(100%);
 }
 
 .playerAliveEco {
+  font-family: "Concert One";
+  color: var(--color-moneys);
+  grid-area: eco;
 }
 
 .playerAliveUtilContainer {
+  grid-area: util;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  column-gap: 3px;
+  grid-template-columns: 15px 15px 15px 15px;
+}
+
+.playerAliveUtilImage {
+  max-height: 20px;
+  filter: brightness(0) invert(100%);
 }
 
 .playerAliveEquipmentContainer {
+  grid-area: equipment;
+  display: grid;
+  align-items: center;
+}
+
+.playerAliveEquipmentImage {
+  filter: brightness(0) invert(100%);
+  height: 20px;
 }
 
 .playerAliveWeaponContainer {
+  display: grid;
+  align-items: center;
 }
+
+.playerAliveWeaponPrimaryRight {
+  justify-self: end;
+  transform: scaleX(-1);
+}
+
+.playerAliveWeaponPrimary {
+  width: 50px;
+  max-height: 25px;
+  filter: brightness(0) saturate(100%) invert(73%) sepia(1%) saturate(1369%)
+    hue-rotate(244deg) brightness(85%) contrast(78%);
+  filter: drop-shadow(0px 0px 1px black);
+}
+
+.playerAliveWeaponPrimaryLeft {
+  justify-self: start;
+}
+
+.active {
+  filter: brightness(0) invert(100%);
+  filter: drop-shadow(0px 0px 1px black);
+}
+
+/*this.props.player.weapons[key].name*/

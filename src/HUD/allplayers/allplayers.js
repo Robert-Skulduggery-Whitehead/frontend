@@ -8,7 +8,7 @@ import EconomyBar from "./economyBar/economyBar";
 
 export default class AllPlayers extends React.Component {
   constructor(props) {
-    //props: allplayers, teams, map, sides
+    //props: allplayers, teams, map, sides, bomb
     super(props);
     this.state = {};
   }
@@ -41,6 +41,8 @@ export default class AllPlayers extends React.Component {
                     side={"Left"}
                     player={this.props.allplayers[playerID]}
                     teamLogo={this.props.teams.left.img}
+                    bomb={this.props.bomb}
+                    playerID={playerID}
                   ></PlayerAlive>
                 );
               } else {
@@ -79,6 +81,8 @@ export default class AllPlayers extends React.Component {
                     side={"Right"}
                     player={this.props.allplayers[playerID]}
                     teamLogo={this.props.teams.right.img}
+                    bomb={this.props.bomb}
+                    playerID={playerID}
                   ></PlayerAlive>
                 );
               } else {

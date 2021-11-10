@@ -182,6 +182,7 @@ export default class Layout extends React.Component {
             teams={this.state.teams}
             map={this.state.map}
             sides={this.state.sides}
+            bomb={this.state.bomb}
           ></AllPlayers>
           <Matchbar
             allplayers={this.state.allplayers}
