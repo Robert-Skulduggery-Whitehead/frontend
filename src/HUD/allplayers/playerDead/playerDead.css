@@ -1,0 +1,193 @@
+.playerDeadContainer {
+  display: grid;
+  width: 355px;
+  height: 70px;
+  background-color: #1a1a1a;
+  border-radius: 5px;
+}
+
+.playerDeadContainerLeft {
+  display: grid;
+  grid-template-columns: 65px 70px 220px;
+  grid-template-areas: "image health rest";
+}
+
+.playerDeadContainerRight {
+  display: grid;
+  grid-template-columns: 220px 70px 65px;
+  grid-template-areas: "rest health image";
+}
+
+.playerDeadImageContainer {
+  grid-area: image;
+  display: grid;
+  align-items: end;
+}
+
+.playerDeadImage {
+  height: 65px;
+  width: 65px;
+  filter: brightness(0.5);
+}
+
+.playerDeadHealthContainer {
+  grid-area: health;
+  align-self: center;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.playerDeadHealth {
+  background-color: #1a1a1a;
+  width: 60px;
+  height: 60px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.playerDeadSkullImage {
+  height: 25px;
+  width: 25px;
+  filter: brightness(0) invert(50%);
+}
+
+.playerDeadRestContainer {
+  grid-area: rest;
+  display: grid;
+  align-items: center;
+  grid-template-rows: 30px 40px;
+}
+
+.playerDeadTopContainer {
+  display: grid;
+  align-items: center;
+  color: white;
+  font-family: "Concert One";
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.playerDeadTopContainerLeft {
+  grid-template-columns: 95px 80px 40px;
+  grid-template-areas: "name kda kills";
+}
+
+.playerDeadTopContainerRight {
+  grid-template-columns: 40px 80px 95px;
+  grid-template-areas: "kills kda name";
+}
+
+.playerDeadName {
+  grid-area: name;
+}
+
+.playerDeadNameLeft {
+  justify-self: start;
+}
+
+.playerDeadNameRight {
+  justify-self: end;
+}
+
+.playerDeadKDA {
+  grid-area: kda;
+  justify-self: center;
+}
+
+.playerDeadRoundKillsContainer {
+  grid-area: kills;
+  display: grid;
+  align-items: center;
+  text-transform: lowercase;
+}
+
+.playerDeadRoundKillsContainerLeft {
+  justify-self: end;
+  justify-content: center;
+  grid-template-columns: 20px 10px 10px;
+  grid-template-areas: "img x kills";
+}
+
+.playerDeadRoundKillsContainerRight {
+  justify-self: start;
+  justify-content: center;
+  grid-template-columns: 10px 10px 20px;
+  grid-template-areas: "kills x img";
+}
+
+.playerDeadRoundKillsImage {
+  height: 15px;
+  grid-area: img;
+}
+
+.playerDeadRoundKills {
+  grid-area: kills;
+}
+
+.playerDeadBottomContainer {
+  display: grid;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.playerDeadBottomContainerLeft {
+  grid-template-columns: 80px 135px;
+  grid-template-areas: "eco damage";
+}
+
+.playerDeadBottomContainerRight {
+  grid-template-columns: 135px 80px;
+  grid-template-areas: "damage eco";
+}
+
+.playerDeadEco {
+  grid-area: eco;
+  color: grey;
+  font-family: "Concert One";
+  font-size: 25px;
+}
+
+.playerDeadEcoLeft {
+  justify-self: start;
+}
+
+.playerDeadEcoRight {
+  justify-self: end;
+}
+
+.playerDeadRoundDamageContainer {
+  grid-area: damage;
+  display: grid;
+  align-items: center;
+}
+
+.playerDeadRoundDamageContainerLeft {
+  width: 70px;
+  justify-self: end;
+  justify-items: start;
+  grid-template-areas: "text number";
+}
+
+.playerDeadRoundDamageContainerRight {
+  width: 80px;
+  justify-self: start;
+  justify-items: end;
+  grid-template-areas: "number text";
+}
+
+.playerDeadRoundDamageText {
+  grid-area: text;
+  color: grey;
+  font-size: 15px;
+  font-family: "Concert One";
+}
+
+.playerDeadRoundDamage {
+  grid-area: number;
+  color: grey;
+  font-size: 25px;
+  font-family: "Concert One";
+}

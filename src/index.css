@@ -46,3 +46,38 @@ code {
   --defuse-filter: brightness(0) saturate(100%) invert(61%) sepia(96%)
     saturate(3263%) hue-rotate(167deg) brightness(98%) contrast(97%);
 }
+
+.gray {
+  color: gray;
+}
+
+.t {
+  color: var(--color-t);
+}
+.ct {
+  color: var(--color-ct);
+}
+
+.tBackground {
+  background-color: var(--color-t);
+}
+
+.ctBackground {
+  background-color: var(--color-ct);
+}
+
+.tShadow {
+  filter: drop-shadow(0px 0px 3px var(--color-t));
+}
+
+.ctShadow {
+  filter: drop-shadow(0px 0px 3px var(--color-ct));
+}
+
+.tOutline {
+  outline-color: var(--color-t);
+}
+
+.ctOutline {
+  outline-color: var(--color-ct);
+}
