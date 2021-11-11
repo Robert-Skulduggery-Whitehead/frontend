@@ -83,6 +83,16 @@ export default class Timer extends React.Component {
         });
       }
 
+      if (
+        prevProps.bomb.state === "defusing" &&
+        this.props.bomb.state === "planted"
+      ) {
+        this.setState({
+          defuseSate: false,
+          bombPlanted: true,
+        });
+      }
+
       if (this.props.bomb.state === "defusing") {
         if (this.props.bomb.countdown <= 5) {
           this.setState({
@@ -104,18 +114,6 @@ export default class Timer extends React.Component {
       if (this.props.bomb.state === "planting") {
         this.setState({
           plantingPercentage: (this.props.bomb.countdown / 3) * 100,
-        });
-      }
-    }
-
-    if (prevProps.round !== this.props.round) {
-      this.setState({
-        round: this.props.round,
-      });
-      if (this.props.round.phase === "over") {
-        this.setState({
-          bombPlanted: false,
-          bombDefused: false,
         });
       }
     }
