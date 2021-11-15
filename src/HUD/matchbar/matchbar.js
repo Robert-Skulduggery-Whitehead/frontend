@@ -15,8 +15,6 @@ export default class Matchbar extends React.Component {
     //
   }
 
-  componentDidMount() {}
-
   render() {
     return (
       <div>
