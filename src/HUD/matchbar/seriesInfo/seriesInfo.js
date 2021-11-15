@@ -17,7 +17,7 @@ export default class SeriesInfo extends React.Component {
   render() {
     if (this.props.round.phase === "freezetime") {
       return (
-        <div class={"seriesInfo " + "seriesInfo" + this.props.series.bestOf}>
+        <div class={"seriesInfo seriesInfo" + this.props.series.bestOf}>
           <div class="seriesInfo3 seriesInfo">
             {Object.keys(this.props.series.games).map((gameId) => {
               return (

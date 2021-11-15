@@ -18,12 +18,14 @@ export default class PlayerDead extends React.Component {
             <img
               class="playerDeadImage"
               src={"./teamImages/" + this.props.teamLogo}
+              alt=""
             ></img>
           )}
           {this.props.player.image !== "" && (
             <img
               class="playerDeadImage"
               src={"./playerImages/" + this.props.player.image}
+              alt=""
             ></img>
           )}
         </div>
@@ -69,6 +71,7 @@ export default class PlayerDead extends React.Component {
                 <img
                   class="playerDeadRoundKillsImage"
                   src="./svgs/icon_skull_default.svg"
+                  alt=""
                 ></img>
                 x
                 <span class="playerDeadRoundKills">

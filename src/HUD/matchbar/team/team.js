@@ -28,9 +28,7 @@ export default class Team extends React.Component {
           }
         >
           <div
-            class={
-              "teamScore " + this.props.class + "Score" + " " + this.props.side
-            }
+            class={"teamScore " + this.props.class + "Score " + this.props.side}
           >
             {this.props.side === "ct" && (
               <div>{this.props.map.team_ct.score}</div>

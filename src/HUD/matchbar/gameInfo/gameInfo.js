@@ -45,11 +45,14 @@ export default class GameInfo extends React.Component {
               this.props.teams.left.name
             ) {
               return (
-                <div class={"seriesDot " + this.props.sides.left + "Dot"}></div>
+                <div
+                  key={gameNo}
+                  class={"seriesDot " + this.props.sides.left + "Dot"}
+                ></div>
               );
             } else {
               if (gameNo !== "game" + this.props.series.bestOf) {
-                return <div class="seriesDot"></div>;
+                return <div key={gameNo} class="seriesDot"></div>;
               }
             }
           })}
@@ -69,12 +72,13 @@ export default class GameInfo extends React.Component {
             ) {
               return (
                 <div
+                  key={gameNo}
                   class={"seriesDot " + this.props.sides.right + "Dot"}
                 ></div>
               );
             } else {
               if (gameNo !== "game" + this.props.series.bestOf) {
-                return <div class="seriesDot"></div>;
+                return <div key={gameNo} class="seriesDot"></div>;
               }
             }
           })}

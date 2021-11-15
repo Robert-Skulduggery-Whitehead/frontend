@@ -2,7 +2,6 @@ import React from "react";
 import "./allplayers.css";
 import PlayerAlive from "./playerAlive/playerAlive";
 import PlayerDead from "./playerDead/playerDead";
-import PlayerNumber from "./playerNumber/playerNumber";
 import UtilBar from "./utilBar/utilBar";
 import EconomyBar from "./economyBar/economyBar";
 
@@ -37,6 +36,7 @@ export default class AllPlayers extends React.Component {
               if (this.props.allplayers[playerID].state.health !== 0) {
                 return (
                   <PlayerAlive
+                    key={playerID}
                     team={this.props.sides.left}
                     side={"Left"}
                     player={this.props.allplayers[playerID]}
@@ -48,6 +48,7 @@ export default class AllPlayers extends React.Component {
               } else {
                 return (
                   <PlayerDead
+                    key={playerID}
                     team={this.props.sides.left}
                     side={"Left"}
                     player={this.props.allplayers[playerID]}
@@ -77,6 +78,7 @@ export default class AllPlayers extends React.Component {
               if (this.props.allplayers[playerID].state.health !== 0) {
                 return (
                   <PlayerAlive
+                    key={playerID}
                     team={this.props.sides.right}
                     side={"Right"}
                     player={this.props.allplayers[playerID]}
@@ -88,6 +90,7 @@ export default class AllPlayers extends React.Component {
               } else {
                 return (
                   <PlayerDead
+                    key={playerID}
                     team={this.props.sides.right}
                     side={"Right"}
                     player={this.props.allplayers[playerID]}

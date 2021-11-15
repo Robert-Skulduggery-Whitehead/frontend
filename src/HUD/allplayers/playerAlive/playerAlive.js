@@ -23,12 +23,14 @@ export default class PlayerAlive extends React.Component {
             <img
               class="playerAliveImage"
               src={"./teamImages/" + this.props.teamLogo}
+              alt=""
             ></img>
           )}
           {this.props.player.image !== "" && (
             <img
               class="playerAliveImage"
               src={"./playerImages/" + this.props.player.image}
+              alt=""
             ></img>
           )}
         </div>
@@ -69,6 +71,7 @@ export default class PlayerAlive extends React.Component {
                 <img
                   class="playerAliveRoundKillsImage"
                   src="./svgs/icon_skull_default.svg"
+                  alt=""
                 ></img>
                 x
                 <span class="playerAliveRoundKills">
@@ -86,7 +89,7 @@ export default class PlayerAlive extends React.Component {
               }
               style={
                 this.props.side === "Left"
-                  ? this.props.team == "ct"
+                  ? this.props.team === "ct"
                     ? {
                         background:
                           "linear-gradient(90deg, #0a88c5 " +
@@ -103,7 +106,7 @@ export default class PlayerAlive extends React.Component {
                           0 +
                           "%",
                       }
-                  : this.props.team == "ct"
+                  : this.props.team === "ct"
                   ? {
                       background:
                         "linear-gradient(90deg, #1a1a1a " +
@@ -153,12 +156,14 @@ export default class PlayerAlive extends React.Component {
                 if (this.props.player.weapons[key].type === "Grenade") {
                   return (
                     <img
+                      key={key}
                       class="playerAliveUtilImage"
                       src={
                         "./weapons/" +
                         this.props.player.weapons[key].name +
                         ".svg"
                       }
+                      alt=""
                     ></img>
                   );
                 }
@@ -201,8 +206,9 @@ export default class PlayerAlive extends React.Component {
                   this.state.rifle = true;
                   return (
                     <img
+                      key={key}
                       class={
-                        this.props.player.weapons[key].state == "active"
+                        this.props.player.weapons[key].state === "active"
                           ? "playerAliveWeaponPrimary playerAliveWeaponPrimary" +
                             this.props.side +
                             " active"
@@ -214,20 +220,22 @@ export default class PlayerAlive extends React.Component {
                         this.props.player.weapons[key].name +
                         ".svg"
                       }
+                      alt=""
                     ></img>
                   );
                 }
               })}
               {Object.keys(this.props.player.weapons).map((key) => {
                 if (
-                  this.state.rifle == false &&
+                  this.state.rifle === false &&
                   this.props.player.weapons[key].type === "Pistol"
                 ) {
                   this.state.pistol = true;
                   return (
                     <img
+                      key={key}
                       class={
-                        this.props.player.weapons[key].state == "active"
+                        this.props.player.weapons[key].state === "active"
                           ? "playerAliveWeaponPrimary playerAliveWeaponPrimary" +
                             this.props.side +
                             " active"
@@ -239,21 +247,23 @@ export default class PlayerAlive extends React.Component {
                         this.props.player.weapons[key].name +
                         ".svg"
                       }
+                      alt=""
                     ></img>
                   );
                 }
               })}
               {Object.keys(this.props.player.weapons).map((key) => {
                 if (
-                  this.state.pistol == false &&
-                  this.state.rifle == false &&
+                  this.state.pistol === false &&
+                  this.state.rifle === false &&
                   this.props.player.weapons[key].type === "Pistol"
                 ) {
                   this.state.pistol = true;
                   return (
                     <img
+                      key={key}
                       class={
-                        this.props.player.weapons[key].state == "active"
+                        this.props.player.weapons[key].state === "active"
                           ? "playerAliveWeaponPrimary playerAliveWeaponPrimary" +
                             this.props.side +
                             " active"
@@ -265,6 +275,7 @@ export default class PlayerAlive extends React.Component {
                         this.props.player.weapons[key].name +
                         ".svg"
                       }
+                      alt=""
                     ></img>
                   );
                 }
