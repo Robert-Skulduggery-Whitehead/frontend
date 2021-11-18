@@ -82,67 +82,73 @@ export default class EconomyBar extends React.Component {
   }
 
   render() {
-    return (
-      <div class={"economyBarContainer economyBarContainer" + this.props.side}>
-        <div class="economyBarTeamLogoContainer">
-          <img
-            class={"economyBarTeamLogo " + this.props.team + "Image"}
-            src={
-              "./svgs/logo_" + this.props.team.toUpperCase() + "_default.png"
-            }
-            alt=""
-          ></img>
-        </div>
-        <div class="economyBarLossBonusDotsContainer">
-          <div
-            class={
-              this.state.consecutiveLoss >= 1
-                ? "economyBarLossBonusDot " + this.props.team + "Dot"
-                : "economyBarLossBonusDot"
-            }
-          ></div>
-          <div
-            class={
-              this.state.consecutiveLoss >= 2
-                ? "economyBarLossBonusDot " + this.props.team + "Dot"
-                : "economyBarLossBonusDot"
-            }
-          ></div>
-          <div
-            class={
-              this.state.consecutiveLoss >= 3
-                ? "economyBarLossBonusDot " + this.props.team + "Dot"
-                : "economyBarLossBonusDot"
-            }
-          ></div>
-          <div
-            class={
-              this.state.consecutiveLoss >= 4
-                ? "economyBarLossBonusDot " + this.props.team + "Dot"
-                : "economyBarLossBonusDot"
-            }
-          ></div>
-          <div
-            class={
-              this.state.consecutiveLoss === 5
-                ? "economyBarLossBonusDot " + this.props.team + "Dot"
-                : "economyBarLossBonusDot"
-            }
-          ></div>
-        </div>
-        <div class="economyBarLossBonusContainer">
-          <div class="economyBarLossBonus">{this.state.lossBonus}</div>
-          <div class={"economyBarLossBonuxTest " + this.props.team}>
-            Loss Bonus
+    if (this.props.round.phase === "freezetime") {
+      return (
+        <div
+          class={"economyBarContainer economyBarContainer" + this.props.side}
+        >
+          <div class="economyBarTeamLogoContainer">
+            <img
+              class={"economyBarTeamLogo " + this.props.team + "Image"}
+              src={
+                "./svgs/logo_" + this.props.team.toUpperCase() + "_default.png"
+              }
+              alt=""
+            ></img>
+          </div>
+          <div class="economyBarLossBonusDotsContainer">
+            <div
+              class={
+                this.state.consecutiveLoss >= 1
+                  ? "economyBarLossBonusDot " + this.props.team + "Dot"
+                  : "economyBarLossBonusDot"
+              }
+            ></div>
+            <div
+              class={
+                this.state.consecutiveLoss >= 2
+                  ? "economyBarLossBonusDot " + this.props.team + "Dot"
+                  : "economyBarLossBonusDot"
+              }
+            ></div>
+            <div
+              class={
+                this.state.consecutiveLoss >= 3
+                  ? "economyBarLossBonusDot " + this.props.team + "Dot"
+                  : "economyBarLossBonusDot"
+              }
+            ></div>
+            <div
+              class={
+                this.state.consecutiveLoss >= 4
+                  ? "economyBarLossBonusDot " + this.props.team + "Dot"
+                  : "economyBarLossBonusDot"
+              }
+            ></div>
+            <div
+              class={
+                this.state.consecutiveLoss === 5
+                  ? "economyBarLossBonusDot " + this.props.team + "Dot"
+                  : "economyBarLossBonusDot"
+              }
+            ></div>
+          </div>
+          <div class="economyBarLossBonusContainer">
+            <div class="economyBarLossBonus">{this.state.lossBonus}</div>
+            <div class={"economyBarLossBonusText " + this.props.team}>
+              Loss Bonus
+            </div>
+          </div>
+          <div class="economyBarEquipValueContainer">
+            <div class="economyBarEquipValue">{this.state.equipValue}</div>
+            <div class={"economyBarEquipValueText " + this.props.team}>
+              Equipment Value
+            </div>
           </div>
         </div>
-        <div class="economyBarEquipValueContainer">
-          <div class="economyBarEquipValue">{this.state.equipValue}</div>
-          <div class={"economyBarEquipValueText " + this.props.team}>
-            Equipment Value
-          </div>
-        </div>
-      </div>
-    );
+      );
+    } else {
+      return <div></div>;
+    }
   }
 }

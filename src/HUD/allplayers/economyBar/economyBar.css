@@ -1,0 +1,100 @@
+.economyBarContainer {
+  position: fixed;
+  display: grid;
+  align-items: center;
+  height: 60px;
+  width: 315px;
+  background-color: var(--color-black);
+  top: 470px;
+  border-radius: 5px;
+  column-gap: 10px;
+  font-family: "Concert One";
+}
+
+.economyBarContainerLeft {
+  clip-path: polygon(0 0, 90% 0, 100% 50%, 100% 100%, 0 100%);
+  left: 20px;
+  grid-template-areas: "logo dots loss eco";
+  grid-template-columns: 60px 10px 85px 125px;
+}
+
+.economyBarContainerRight {
+  clip-path: polygon(0 50%, 10% 0, 100% 0, 100% 100%, 0 100%);
+  right: 20px;
+  grid-template-areas: "eco loss dots logo";
+  grid-template-columns: 125px 85px 10px 60px;
+}
+
+.economyBarTeamLogoContainer {
+  display: grid;
+  justify-self: center;
+  width: 60px;
+  align-items: center;
+  justify-items: center;
+  grid-area: logo;
+}
+
+.economyBarTeamLogo {
+  height: 45px;
+}
+
+.economyBarLossBonusDotsContainer {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  justify-self: center;
+  row-gap: 5px;
+  grid-area: dots;
+  width: 20px;
+}
+
+.economyBarLossBonusDot {
+  height: 5px;
+  width: 5px;
+  background-color: grey;
+  border-radius: 5px;
+}
+
+.tDot {
+  background-color: var(--color-t);
+}
+
+.ctDot {
+  background-color: var(--color-ct);
+}
+
+.economyBarLossBonusContainer {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  justify-self: center;
+  grid-area: loss;
+  width: 85px;
+}
+
+.economyBarLossBonus {
+  color: white;
+  font-size: 25px;
+}
+
+.economyBarLossBonusText {
+  font-size: 15px;
+}
+
+.economyBarEquipValueContainer {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  justify-self: center;
+  grid-area: eco;
+  width: 115px;
+}
+
+.economyBarEquipValue {
+  color: white;
+  font-size: 25px;
+}
+
+.economyBarEquipValueText {
+  font-size: 15px;
+}
