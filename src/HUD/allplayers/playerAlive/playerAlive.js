@@ -152,20 +152,46 @@ export default class PlayerAlive extends React.Component {
             </div>
             <div class={"playerAliveEco"}>${this.props.player.state.money}</div>
             <div class="playerAliveUtilContainer">
-              {Object.keys(this.props.player.weapons).map((key) => {
+              {Object.keys(this.props.player.weapons).map((key, index) => {
                 if (this.props.player.weapons[key].type === "Grenade") {
-                  return (
-                    <img
-                      key={key}
-                      class="playerAliveUtilImage"
-                      src={
-                        "./weapons/" +
-                        this.props.player.weapons[key].name +
-                        ".svg"
-                      }
-                      alt=""
-                    ></img>
-                  );
+                  if (this.props.player.weapons[key].ammo_reserve === 2) {
+                    let temp = [
+                      <img
+                        key={key + index}
+                        class="playerAliveUtilImage"
+                        src={
+                          "./weapons/" +
+                          this.props.player.weapons[key].name +
+                          ".svg"
+                        }
+                        alt=""
+                      ></img>,
+                      <img
+                        key={key + index + 1}
+                        class="playerAliveUtilImage"
+                        src={
+                          "./weapons/" +
+                          this.props.player.weapons[key].name +
+                          ".svg"
+                        }
+                        alt=""
+                      ></img>,
+                    ];
+                    return temp;
+                  } else {
+                    return (
+                      <img
+                        key={key + index}
+                        class="playerAliveUtilImage"
+                        src={
+                          "./weapons/" +
+                          this.props.player.weapons[key].name +
+                          ".svg"
+                        }
+                        alt=""
+                      ></img>
+                    );
+                  }
                 }
               })}
             </div>

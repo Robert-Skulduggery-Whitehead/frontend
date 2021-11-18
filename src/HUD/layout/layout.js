@@ -1,9 +1,6 @@
 import React from "react";
 import AllPlayers from "../allplayers/allplayers";
 import Matchbar from "../matchbar/matchbar";
-//import Allplayers from "../allplayers/allplayers";
-//import LeftTeamPlayers from "../leftTeamPlayers/leftTeamPlayers";
-//import RightTeamPlayers from "../rightTeamPlayers/rightTeamPlayers";
 //import Map from "../map/map";
 //import MapPicks from "../mapPicks/mapPicks";
 //import PlayersAlive from "../playersAlive/playersAlive";
@@ -183,6 +180,7 @@ export default class Layout extends React.Component {
             map={this.state.map}
             sides={this.state.sides}
             bomb={this.state.bomb}
+            round={this.state.round}
           ></AllPlayers>
           <Matchbar
             allplayers={this.state.allplayers}

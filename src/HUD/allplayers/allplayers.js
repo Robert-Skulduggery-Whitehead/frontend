@@ -7,7 +7,7 @@ import EconomyBar from "./economyBar/economyBar";
 
 export default class AllPlayers extends React.Component {
   constructor(props) {
-    //props: allplayers, teams, map, sides, bomb
+    //props: allplayers, teams, map, sides, bomb, round
     super(props);
     this.state = {};
   }
@@ -19,13 +19,16 @@ export default class AllPlayers extends React.Component {
       <div class="allPlayers">
         <UtilBar
           allplayers={this.props.allplayers}
+          team={this.props.sides.left}
           side="Left"
           phase={this.props.map.phase}
         ></UtilBar>
         <EconomyBar
           allplayers={this.props.allplayers}
+          team={this.props.sides.left}
           side="Left"
-          map={this.props.map.phase}
+          map={this.props.map}
+          round={this.props.round}
         ></EconomyBar>
         <div class="allPlayersContainer allPlayersContainerLeft">
           {Object.keys(this.props.allplayers).map((playerID) => {
@@ -61,13 +64,16 @@ export default class AllPlayers extends React.Component {
         </div>
         <UtilBar
           allplayers={this.props.allplayers}
+          team={this.props.sides.right}
           side="Right"
           phase={this.props.map.phase}
         ></UtilBar>
         <EconomyBar
           allplayers={this.props.allplayers}
+          team={this.props.sides.right}
           side="Right"
-          map={this.props.map.phase}
+          map={this.props.map}
+          round={this.props.round}
         ></EconomyBar>
         <div class="allPlayersContainer allPlayersContainerRight">
           {Object.keys(this.props.allplayers).map((playerID) => {

@@ -28,7 +28,7 @@ export default class SeriesInfo extends React.Component {
                       <span>
                         <img
                           class="seriesMapInfoImage"
-                          src={this.props.teams.left.img}
+                          src={"./teamImages/" + this.props.teams.left.img}
                           alt=""
                         ></img>
                         {this.props.teams.left.name ===
@@ -47,7 +47,7 @@ export default class SeriesInfo extends React.Component {
                         )}
                         <img
                           class="seriesMapInfoImage"
-                          src={this.props.teams.right.img}
+                          src={"./teamImages/" + this.props.teams.right.img}
                           alt=""
                         ></img>
                       </span>
