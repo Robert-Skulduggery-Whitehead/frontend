@@ -1,0 +1,112 @@
+.utilBarContainer {
+  position: fixed;
+  width: 240px;
+  height: 50px;
+  top: 410px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-color: var(--color-black);
+  font-family: "Concert One";
+  column-gap: 10px;
+  border-radius: 5px;
+}
+
+.utilBarContainerLeft {
+  clip-path: polygon(0 0, 90% 0, 100% 50%, 100% 100%, 0 100%);
+  left: 20px;
+  padding-left: 5px;
+  grid-template-columns: 50px 175px;
+  grid-template-areas: "level util";
+}
+
+.utilBarContainerRight {
+  clip-path: polygon(0 50%, 10% 0, 100% 0, 100% 100%, 0 100%);
+  right: 20px;
+  padding-left: 5px;
+  grid-template-columns: 175px 50px;
+  grid-template-areas: "util level";
+}
+
+.utilBarUtilLevelContainer {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  row-gap: 2px;
+  width: 65px;
+  grid-area: level;
+}
+
+.utilBarUtilLevel {
+  font-size: 15px;
+}
+
+.utilBarUtilLevelText {
+  font-size: 15px;
+}
+
+.utilBarUtilContainer {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  width: 175px;
+  grid-area: util;
+}
+
+.utilBarUtilContainerLeft {
+  grid-template-columns: 40px 40px 40px 40px;
+  grid-template-areas: "fire smoke flash he";
+  column-gap: 2px;
+}
+
+.utilBarUtilContainerRight {
+  column-gap: 5px;
+  grid-template-columns: 40px 40px 40px 40px;
+  grid-template-areas: "fire smoke flash he";
+  column-gap: 2px;
+}
+
+.utilBarUtil {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.utilBarUtilLeft {
+  grid-template-areas: "image xText number";
+}
+
+.utilBarUtilRight {
+  grid-template-areas: "image xText number";
+}
+
+.utilBarFire {
+  grid-area: fire;
+}
+
+.utilBarSmoke {
+  grid-area: smoke;
+}
+
+.utilBarFlash {
+  grid-area: flash;
+}
+
+.utilBarHE {
+  grid-area: he;
+}
+
+.utilBarUtilImage {
+  grid-area: image;
+  height: 35px;
+}
+
+.utilBarX {
+  grid-area: xText;
+  font-size: 15px;
+}
+
+.utilBarUtilAmount {
+  grid-area: number;
+  font-size: 15px;
+}

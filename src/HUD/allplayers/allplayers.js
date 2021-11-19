@@ -21,7 +21,7 @@ export default class AllPlayers extends React.Component {
           allplayers={this.props.allplayers}
           team={this.props.sides.left}
           side="Left"
-          phase={this.props.map.phase}
+          round={this.props.round}
         ></UtilBar>
         <EconomyBar
           allplayers={this.props.allplayers}
@@ -66,7 +66,7 @@ export default class AllPlayers extends React.Component {
           allplayers={this.props.allplayers}
           team={this.props.sides.right}
           side="Right"
-          phase={this.props.map.phase}
+          round={this.props.round}
         ></UtilBar>
         <EconomyBar
           allplayers={this.props.allplayers}
