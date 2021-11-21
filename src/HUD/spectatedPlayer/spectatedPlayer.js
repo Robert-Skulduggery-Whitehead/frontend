@@ -1,8 +1,16 @@
 import React from "react";
-import "./spectatedPlayer.css"
+import "./spectatedPlayer.css";
 
 export default class SpectatedPlayer extends React.Component {
-    constructor(props) {
-        //
-    }
+  constructor(props) {
+      //props: 
+    super(props);
+    this.state = {};
+  }
+
+  componentDidUpdate() {}
+
+  render() {
+    return <div></div>;
+  }
 }

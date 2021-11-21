@@ -1,0 +1,19 @@
+.playerNumberContainerLeft {
+  filter: drop-shadow(1px 0px 0.3px red);
+}
+
+.playerNumberContainerRight {
+  filter: drop-shadow(-1px 0px 0.3px red);
+}
+
+.playerNumber {
+  background-color: var(--color-black);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  height: 30px;
+  width: 30px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  color: white;
+  font-family: "Concert One";
+}

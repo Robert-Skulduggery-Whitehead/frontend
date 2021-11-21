@@ -1,9 +1,7 @@
 import React from "react";
 import AllPlayers from "../allplayers/allplayers";
 import Matchbar from "../matchbar/matchbar";
-//import Map from "../map/map";
-//import MapPicks from "../mapPicks/mapPicks";
-//import PlayersAlive from "../playersAlive/playersAlive";
+import SpectatedPlayer from "../spectatedPlayer/spectatedPlayer";
 
 //import db from 'monk'
 
@@ -192,6 +190,7 @@ export default class Layout extends React.Component {
             teams={this.state.teams}
             series={this.state.series}
           />
+          <SpectatedPlayer player={this.state.player}></SpectatedPlayer>
         </div>
       );
     } else {

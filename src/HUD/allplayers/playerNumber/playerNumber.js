@@ -3,6 +3,7 @@ import "./playerNumber.css";
 
 export default class PlayerNumber extends React.Component {
   constructor(props) {
+    //props: number, side
     super(props);
     this.state = {};
   }
@@ -10,6 +11,16 @@ export default class PlayerNumber extends React.Component {
   componentDidUpdate(prevProps) {}
 
   render() {
-    return <div></div>;
+    return (
+      <div
+        class={
+          "playerNumberContainer + playerNumberContainer" + this.props.side
+        }
+      >
+        <div class={"playerNumber playerNumber" + this.props.side}>
+          {this.props.number}
+        </div>
+      </div>
+    );
   }
 }

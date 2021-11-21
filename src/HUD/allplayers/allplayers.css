@@ -21,3 +21,23 @@
 .allPlayersContainerRight {
   right: 20px;
 }
+
+.allPlayersNumbersContainer {
+  position: fixed;
+  top: 540px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  width: 20px;
+  height: 20px;
+  row-gap: 3px;
+  grid-template-rows: 70px 70px 70px 70px 70px;
+}
+
+.allPlayersNumbersContainerLeft {
+  left: 5px;
+}
+
+.allPlayersNumbersContainerRight {
+  right: 15px;
+}

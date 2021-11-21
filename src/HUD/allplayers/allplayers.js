@@ -4,6 +4,7 @@ import PlayerAlive from "./playerAlive/playerAlive";
 import PlayerDead from "./playerDead/playerDead";
 import UtilBar from "./utilBar/utilBar";
 import EconomyBar from "./economyBar/economyBar";
+import PlayerNumber from "./playerNumber/playerNumber";
 
 export default class AllPlayers extends React.Component {
   constructor(props) {
@@ -62,6 +63,21 @@ export default class AllPlayers extends React.Component {
             }
           })}
         </div>
+        <div class="allPlayersNumbersContainer allPlayersNumbersContainerLeft">
+          {Object.keys(this.props.allplayers).map((playerID) => {
+            if (
+              this.props.allplayers[playerID].team ===
+              this.props.sides.left.toUpperCase()
+            ) {
+              return (
+                <PlayerNumber
+                  number={this.props.allplayers[playerID].observer_slot}
+                  side="Left"
+                ></PlayerNumber>
+              );
+            }
+          })}
+        </div>
         <UtilBar
           allplayers={this.props.allplayers}
           team={this.props.sides.right}
@@ -104,6 +120,21 @@ export default class AllPlayers extends React.Component {
                   ></PlayerDead>
                 );
               }
+            }
+          })}
+        </div>
+        <div class="allPlayersNumbersContainer allPlayersNumbersContainerRight">
+          {Object.keys(this.props.allplayers).map((playerID) => {
+            if (
+              this.props.allplayers[playerID].team ===
+              this.props.sides.right.toUpperCase()
+            ) {
+              return (
+                <PlayerNumber
+                  number={this.props.allplayers[playerID].observer_slot}
+                  side="Right"
+                ></PlayerNumber>
+              );
             }
           })}
         </div>
