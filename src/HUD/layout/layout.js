@@ -2,6 +2,7 @@ import React from "react";
 import AllPlayers from "../allplayers/allplayers";
 import Matchbar from "../matchbar/matchbar";
 import SpectatedPlayer from "../spectatedPlayer/spectatedPlayer";
+import Map from "../map/map";
 
 //import db from 'monk'
 
@@ -19,6 +20,7 @@ export default class Layout extends React.Component {
       player: {},
       round: {},
       map: {},
+      grenades: {},
       //render?
       render: false,
       //sides
@@ -148,6 +150,12 @@ export default class Layout extends React.Component {
         round: data,
       });
     });
+
+    socket.on("grenades", (data) => {
+      this.setState({
+        grenades: data,
+      });
+    });
   }
 
   swapTeams() {
@@ -172,6 +180,13 @@ export default class Layout extends React.Component {
     ) {
       return (
         <div>
+          <Map
+            allplayers={this.state.allplayers}
+            map={this.state.map}
+            bomb={this.state.bomb}
+            player={this.state.player}
+            grenades={this.state.grenades}
+          ></Map>
           <AllPlayers
             allplayers={this.state.allplayers}
             teams={this.state.teams}

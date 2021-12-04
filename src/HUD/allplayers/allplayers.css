@@ -4,7 +4,7 @@
 
 .allPlayersContainer {
   position: fixed;
-  top: 540px;
+  bottom: 20px;
   display: grid;
   align-items: center;
   justify-items: center;
@@ -24,7 +24,7 @@
 
 .allPlayersNumbersContainer {
   position: fixed;
-  top: 540px;
+  bottom: 540px;
   display: grid;
   align-items: center;
   justify-items: center;
