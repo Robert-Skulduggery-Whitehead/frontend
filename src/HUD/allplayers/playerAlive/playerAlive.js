@@ -282,9 +282,8 @@ export default class PlayerAlive extends React.Component {
                 if (
                   this.state.pistol === false &&
                   this.state.rifle === false &&
-                  this.props.player.weapons[key].type === "Pistol"
+                  this.props.player.weapons[key].type === "Knife"
                 ) {
-                  this.state.pistol = true;
                   return (
                     <img
                       key={key}

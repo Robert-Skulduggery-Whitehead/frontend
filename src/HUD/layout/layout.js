@@ -122,7 +122,7 @@ export default class Layout extends React.Component {
         this.swapTeams();
       }
       if (data.round > 30) {
-        if (data.round % 6 === 0 && data.round !== this.state.state.map.round) {
+        if (data.round % 6 === 0 && data.round !== this.state.map.round) {
           this.swapTeams();
         }
       }
@@ -190,7 +190,12 @@ export default class Layout extends React.Component {
             teams={this.state.teams}
             series={this.state.series}
           />
-          <SpectatedPlayer player={this.state.player}></SpectatedPlayer>
+          <SpectatedPlayer
+            player={this.state.player}
+            teams={this.state.teams}
+            sides={this.state.sides}
+            bomb={this.state.bomb}
+          ></SpectatedPlayer>
         </div>
       );
     } else {

@@ -81,3 +81,11 @@ code {
 .ctOutline {
   outline-color: var(--color-ct);
 }
+
+.ctImage {
+  filter: var(--ct-filter);
+}
+
+.tImage {
+  filter: var(--t-filter);
+}

@@ -1,0 +1,236 @@
+.spectatedPlayerContainer {
+  position: fixed;
+  bottom: 20px;
+  left: 790px;
+  background-color: var(--color-black);
+  display: grid;
+  width: 340px;
+  height: 110px;
+  border-radius: 5px;
+  grid-template-rows: 60px 20px 20px;
+  row-gap: 2px;
+  grid-template-areas:
+    "info"
+    "healthBar"
+    "equipment";
+  align-items: center;
+  padding-left: 10px;
+}
+
+.spectatedPlayerInfoContainer {
+  grid-area: info;
+  display: grid;
+  justify-self: start;
+  height: 60px;
+  width: 335px;
+  grid-template-columns: 285px 40px;
+  grid-template-areas: "infoLeft teamLogo";
+  align-items: center;
+}
+
+.spectatedPlayerInfoContainerLeft {
+  grid-area: infoLeft;
+  justify-self: start;
+  display: grid;
+  grid-template-rows: 30px 25px;
+  align-items: center;
+  grid-template-areas:
+    "name"
+    "bottom";
+}
+
+.spectatedPlayerName {
+  font-size: 20px;
+  color: white;
+  font-family: "Concert One";
+  justify-self: start;
+  grid-area: name;
+}
+
+.spectatedPlayerInfoBottom {
+  grid-area: bottom;
+  display: grid;
+  grid-template-columns: 45px 45px 100px 45px;
+  align-items: center;
+  grid-template-areas: "health armour stats kills";
+}
+
+.spectatedPlayerHealthContainer {
+  grid-area: health;
+  grid: display;
+  align-items: center;
+  justify-self: start;
+}
+
+.spectatedPlayerHealthImage {
+  height: 15px;
+  align-self: center;
+  margin: auto;
+}
+
+.spectatedPlayerHealth {
+  font-size: 19px;
+  font-family: "Concert One";
+  color: gray;
+}
+
+.spectatedPlayerArmourContainer {
+  grid-area: armour;
+}
+
+.spectatedPlayerArmourImage {
+  height: 15px;
+  align-self: center;
+  margin: auto;
+}
+
+.spectatedPlayerArmour {
+  font-size: 19px;
+  font-family: "Concert One";
+  color: gray;
+}
+
+.spectatedPlayerStatsContainer {
+  grid-area: stats;
+  font-size: 19px;
+  font-family: "Concert One";
+  color: gray;
+}
+
+.spectatedPlayerRoundKillsContainer {
+  grid-area: kills;
+}
+
+.spectatedPlayerRoundKillsImage {
+  height: 15px;
+  align-self: center;
+  margin: auto;
+}
+
+.spectatedPlayerRoundKills {
+  font-size: 19px;
+  font-family: "Concert One";
+  color: gray;
+}
+
+.spectatedPlayerTeamLogo {
+  grid-area: teamLogo;
+  height: 45px;
+  align-self: center;
+  justify-self: center;
+}
+
+.spectatedPlayerHealthBarContainer {
+  grid-area: healthBar;
+  width: 330px;
+  height: 20px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.spectatedPlayerHealthBar {
+  width: 325px;
+  height: 10px;
+  border-radius: 5px;
+  outline-style: inset;
+  outline-width: 1px;
+}
+
+.spectatedPlayerEquipmentContainer {
+  grid-area: equipment;
+  display: grid;
+  height: 20px;
+  width: 325px;
+  grid-template-columns: 75px 30px 80px 120px;
+  column-gap: 5px;
+  align-items: center;
+  justify-items: center;
+}
+
+.spectatedPlayerAmmoContainer {
+  align-self: center;
+  justify-self: start;
+  display: grid;
+  align-items: center;
+  height: 20px;
+  grid-template-columns: 15px 39px;
+  column-gap: 1px;
+}
+
+.spectatedPlayerAmmoImage {
+  height: 15px;
+  align-self: center;
+  margin: auto;
+}
+
+.spectatedPlayerAmmo {
+  font-size: 15px;
+  font-family: "Concert One";
+  color: gray;
+  justify-self: start;
+}
+
+.spectatedPlayerEquipment {
+  align-self: center;
+  justify-self: start;
+  display: flex;
+  align-items: center;
+}
+
+.spectatedPlayerEquipmentImage {
+  height: 15px;
+  align-self: center;
+  margin: auto;
+}
+
+.spectatedPlayerUtilContainer {
+  align-self: center;
+  justify-self: start;
+  display: grid;
+  align-items: center;
+  height: 20px;
+  grid-template-columns: 15px 15px 15px 15px;
+}
+
+.spectatedPlayerUtilImage {
+  height: 20px;
+  align-self: center;
+  margin: auto;
+  filter: brightness(0) saturate(100%) invert(56%) sepia(0%) saturate(132%)
+    hue-rotate(207deg) brightness(90%) contrast(92%);
+}
+
+.spectatedPlayerWeaponContainer {
+  align-self: center;
+  justify-self: start;
+  display: grid;
+  align-items: center;
+  height: 20px;
+  width: 120px;
+  justify-content: end;
+  column-gap: 5px;
+}
+
+.spectatedPlayerWeaponPrimary {
+  height: 15px;
+  align-self: center;
+  margin: auto;
+  grid-column: 2;
+  filter: brightness(0) saturate(100%) invert(56%) sepia(0%) saturate(132%)
+    hue-rotate(207deg) brightness(90%) contrast(92%);
+}
+
+.spectatedPlayerWeaponSecondary {
+  height: 15px;
+  align-self: center;
+  margin: auto;
+  grid-column: 1;
+  filter: brightness(0) saturate(100%) invert(56%) sepia(0%) saturate(132%)
+    hue-rotate(207deg) brightness(90%) contrast(92%);
+}
+
+.active {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(20%)
+    hue-rotate(50deg) brightness(107%) contrast(104%);
+}

@@ -216,8 +216,8 @@
 .playerAliveWeaponPrimary {
   width: 50px;
   max-height: 25px;
-  filter: brightness(0) saturate(100%) invert(73%) sepia(1%) saturate(1369%)
-    hue-rotate(244deg) brightness(85%) contrast(78%);
+  filter: brightness(0) saturate(100%) invert(56%) sepia(0%) saturate(132%)
+    hue-rotate(207deg) brightness(90%) contrast(92%);
   filter: drop-shadow(0px 0px 1px black);
 }
 
