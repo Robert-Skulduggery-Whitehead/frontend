@@ -1,5 +1,6 @@
 import React from "react";
 import "./map.css";
+import playerImage from "./player.png";
 
 export default class Map extends React.Component {
   constructor(props) {
@@ -8,16 +9,16 @@ export default class Map extends React.Component {
     this.state = {
       map: "./maps/de_nuke.png",
       config: {
-        //If player is above height, use layer1, else layer 2
-        //Maps with one layer height = some value that cant be reached,d efaulting to layer 1
         height: -450,
+        pxPerUX: 0.14376095926926907,
+        pxPerUY: -0.14736670935219626,
         layer1: {
-          x: 473.1284773048749,
-          y: 165.7329003801045,
+          x: 50,
+          y: 355,
         },
         layer2: {
-          x: 473.66746071612374,
-          y: 638.302101754172,
+          x: 50,
+          y: -105,
         },
       },
     };
@@ -33,13 +34,15 @@ export default class Map extends React.Component {
         this.setState({
           config: {
             height: -450,
+            pxPerUX: 0.14376095926926907,
+            pxPerUY: -0.14736670935219626,
             layer1: {
-              x: 473.1284773048749,
-              y: 165.7329003801045,
+              x: 50,
+              y: 355,
             },
             layer2: {
-              x: 473.66746071612374,
-              y: 638.302101754172,
+              x: 50,
+              y: -105,
             },
           },
         });
@@ -59,16 +62,86 @@ export default class Map extends React.Component {
             this.state.config.height
           ) {
             return (
-              <div>
-                {this.props.allplayers[playerID].name}
-                <div>{this.props.allplayers[playerID].position}</div>
+              <div
+                class={
+                  "mapPlayer " +
+                  (playerID === this.props.player.steamid
+                    ? "mapPlayerActive"
+                    : "")
+                }
+                style={{
+                  transform: `translateX(${
+                    Math.round(
+                      this.props.allplayers[playerID].position.split(",")[0] *
+                        this.state.config.pxPerUX -
+                        this.state.config.layer1.x
+                    ) / 2.5
+                  }px) translateY(${
+                    Math.round(
+                      this.props.allplayers[playerID].position.split(",")[1] *
+                        this.state.config.pxPerUY -
+                        this.state.config.layer1.y
+                    ) / 2.5
+                  }px) `,
+                }}
+              >
+                <img
+                  class={
+                    "mapPlayerImage " +
+                    (playerID === this.props.bomb.player
+                      ? "bombPlayerImage"
+                      : this.props.allplayers[playerID].team === "CT"
+                      ? "ctImage"
+                      : "tImage")
+                  }
+                  alt=""
+                  src={playerImage}
+                ></img>
+                <div class="mapPlayerNumber">
+                  {this.props.allplayers[playerID].observer_slot}
+                </div>
               </div>
             );
           } else {
             return (
-              <div>
-                {this.props.allplayers[playerID].name}
-                <div>{this.props.allplayers[playerID].position}</div>
+              <div
+                class={
+                  "mapPlayer " +
+                  (playerID === this.props.player.steamid
+                    ? "mapPlayerActive"
+                    : "")
+                }
+                style={{
+                  transform: `translateX(${
+                    Math.round(
+                      this.props.allplayers[playerID].position.split(",")[0] *
+                        this.state.config.pxPerUX -
+                        this.state.config.layer2.x
+                    ) / 2.5
+                  }px) translateY(${
+                    Math.round(
+                      this.props.allplayers[playerID].position.split(",")[1] *
+                        this.state.config.pxPerUY -
+                        this.state.config.layer2.y
+                    ) / 2.5
+                  }px) `,
+                }}
+              >
+                <img
+                  class={
+                    "mapPlayerImage " +
+                    (playerID === this.props.bomb.player
+                      ? "bombPlayerImage"
+                      : this.props.allplayers[playerID].team === "CT"
+                      ? "ctImage"
+                      : "tImage")
+                  }
+                  alt=""
+                  src={playerImage}
+                ></img>
+                <div class="mapPlayerNumber">
+                  {this.props.allplayers[playerID].observer_slot}
+                </div>
               </div>
             );
           }

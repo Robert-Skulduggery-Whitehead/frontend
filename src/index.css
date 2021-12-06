@@ -89,3 +89,7 @@ code {
 .tImage {
   filter: var(--t-filter);
 }
+
+.bombPlayerImage {
+  filter: var(--bomb-filter);
+}

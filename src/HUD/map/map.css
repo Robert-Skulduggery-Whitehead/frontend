@@ -1,9 +1,34 @@
 .mapContainer {
-  width: 400px;
-  height: 400px;
+  width: 410px;
+  height: 410px;
   top: 10px;
   position: fixed;
   background-position: center;
   background-size: cover;
   color: white;
+}
+
+.mapPlayer {
+  position: absolute;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  left: 50%;
+  top: 50%;
+}
+
+.mapPlayerActive {
+}
+
+.mapPlayerImage {
+  width: 12px;
+  grid-area: 1 / 1 / 1 / 1;
+}
+
+.mapPlayerNumber {
+  color: black;
+  font-size: 10px;
+  font-family: "Concert One";
+  grid-area: 1 / 1 / 1 / 1;
+  z-index: 1;
 }
