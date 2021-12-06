@@ -1,0 +1,9 @@
+.mapContainer {
+  width: 400px;
+  height: 400px;
+  top: 10px;
+  position: fixed;
+  background-position: center;
+  background-size: cover;
+  color: white;
+}

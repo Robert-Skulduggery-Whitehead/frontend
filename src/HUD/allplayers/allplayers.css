@@ -24,7 +24,7 @@
 
 .allPlayersNumbersContainer {
   position: fixed;
-  bottom: 540px;
+  bottom: 360px;
   display: grid;
   align-items: center;
   justify-items: center;

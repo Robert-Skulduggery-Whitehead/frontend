@@ -1,10 +1,7 @@
 import radar from "./radar.png";
 
 const high = {
-  origin: {
-    x: 473.1284773048749,
-    y: 165.7329003801045,
-  },
+  origin: {},
   pxPerUX: 0.14376095926926907,
   pxPerUY: -0.14736670935219626,
 };
