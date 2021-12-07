@@ -46,6 +46,82 @@ export default class Map extends React.Component {
             },
           },
         });
+      } else if (this.props.map.name === "de_ancient") {
+        this.setState({
+          config: {
+            height: -1000,
+            pxPerUX: 0.1983512056034216,
+            pxPerUY: -0.20108163914549304,
+            layer1: {
+              x: -65,
+              y: 80,
+            },
+          },
+        });
+      } else if (this.props.map.name === "de_dust2") {
+        this.setState({
+          config: {
+            height: -1000,
+            pxPerUX: 0.2278315639654376,
+            pxPerUY: -0.22776482548619972,
+            layer1: {
+              x: -35,
+              y: -220,
+            },
+          },
+        });
+      } else if (this.props.map.name === "de_inferno") {
+        this.setState({
+          config: {
+            height: -1000,
+            pxPerUX: 0.2041685571162696,
+            pxPerUY: -0.20465735943851654,
+            layer1: {
+              x: 100,
+              y: -270,
+            },
+          },
+        });
+      } else if (this.props.map.name === "de_mirage") {
+        this.setState({
+          config: {
+            height: -1000,
+            pxPerUX: 0.20118507589946494,
+            pxPerUY: -0.20138282875746794,
+            layer1: {
+              x: -125,
+              y: 185,
+            },
+          },
+        });
+      } else if (this.props.map.name === "de_overpass") {
+        this.setState({
+          config: {
+            height: -1000,
+            pxPerUX: 0.1923720959212443,
+            pxPerUY: -0.19427507725530338,
+            layer1: {
+              x: -410,
+              y: 180,
+            },
+          },
+        });
+      } else if (this.props.map.name === "de_vertigo") {
+        this.setState({
+          config: {
+            height: 11700,
+            pxPerUX: 0.1989615567841087,
+            pxPerUY: -0.19820052722907044,
+            layer1: {
+              x: -240,
+              y: 270,
+            },
+            layer2: {
+              x: -250,
+              y: -150,
+            },
+          },
+        });
       }
     }
   }
@@ -114,7 +190,7 @@ export default class Map extends React.Component {
                         this.state.config.pxPerUY -
                         this.state.config.layer1.y
                     ) / 2.5
-                  }px) rotate(${45 + direction}deg)`,
+                  }px)`,
                 }}
               >
                 <img
@@ -128,6 +204,9 @@ export default class Map extends React.Component {
                   }
                   alt=""
                   src={playerImage}
+                  style={{
+                    transform: `rotate(${45 + direction}deg)`,
+                  }}
                 ></img>
                 <div class="mapPlayerNumber">
                   {this.props.allplayers[playerID].observer_slot}

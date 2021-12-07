@@ -187,7 +187,7 @@ export default class Layout extends React.Component {
             player={this.state.player}
             grenades={this.state.grenades}
           ></Map>
-          {/*<AllPlayers
+          <AllPlayers
             allplayers={this.state.allplayers}
             teams={this.state.teams}
             map={this.state.map}
@@ -210,7 +210,7 @@ export default class Layout extends React.Component {
             teams={this.state.teams}
             sides={this.state.sides}
             bomb={this.state.bomb}
-          ></SpectatedPlayer>*/}
+          ></SpectatedPlayer>
         </div>
       );
     } else {
