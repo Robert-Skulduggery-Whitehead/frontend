@@ -156,6 +156,10 @@ export default class Layout extends React.Component {
         grenades: data,
       });
     });
+
+    socket.on("swapTeams", () => {
+      this.swapTeams();
+    });
   }
 
   swapTeams() {
