@@ -53,8 +53,8 @@ export default class Map extends React.Component {
             pxPerUX: 0.1983512056034216,
             pxPerUY: -0.20108163914549304,
             layer1: {
-              x: -65,
-              y: 80,
+              x: -55,
+              y: 100,
             },
           },
         });
@@ -193,24 +193,38 @@ export default class Map extends React.Component {
                   }px)`,
                 }}
               >
-                <img
-                  class={
-                    "mapPlayerImage " +
-                    (playerID === this.props.bomb.player
-                      ? "bombPlayerImage"
-                      : this.props.allplayers[playerID].team === "CT"
-                      ? "ctImage"
-                      : "tImage")
-                  }
-                  alt=""
-                  src={playerImage}
-                  style={{
-                    transform: `rotate(${45 + direction}deg)`,
-                  }}
-                ></img>
-                <div class="mapPlayerNumber">
-                  {this.props.allplayers[playerID].observer_slot}
-                </div>
+                {this.props.allplayers[playerID].state.health > 0 && (
+                  <div class="mapPlayerAlive">
+                    <img
+                      class={
+                        "mapPlayerImage " +
+                        (playerID === this.props.bomb.player
+                          ? "bombPlayerImage"
+                          : this.props.allplayers[playerID].team === "CT"
+                          ? "ctImage"
+                          : "tImage")
+                      }
+                      alt=""
+                      src={playerImage}
+                      style={{
+                        transform: `rotate(${45 + direction}deg)`,
+                      }}
+                    ></img>
+                    <div class="mapPlayerNumber">
+                      {this.props.allplayers[playerID].observer_slot}
+                    </div>
+                  </div>
+                )}
+                {this.props.allplayers[playerID].state.health === 0 && (
+                  <div
+                    class={
+                      "mapPlayerDead " +
+                      this.props.allplayers[playerID].team.toLowerCase()
+                    }
+                  >
+                    X
+                  </div>
+                )}
               </div>
             );
           } else {
@@ -238,21 +252,38 @@ export default class Map extends React.Component {
                   }px) `,
                 }}
               >
-                <img
-                  class={
-                    "mapPlayerImage " +
-                    (playerID === this.props.bomb.player
-                      ? "bombPlayerImage"
-                      : this.props.allplayers[playerID].team === "CT"
-                      ? "ctImage"
-                      : "tImage")
-                  }
-                  alt=""
-                  src={playerImage}
-                ></img>
-                <div class="mapPlayerNumber">
-                  {this.props.allplayers[playerID].observer_slot}
-                </div>
+                {this.props.allplayers[playerID].state.health > 0 && (
+                  <div class="mapPlayerAlive">
+                    <img
+                      class={
+                        "mapPlayerImage " +
+                        (playerID === this.props.bomb.player
+                          ? "bombPlayerImage"
+                          : this.props.allplayers[playerID].team === "CT"
+                          ? "ctImage"
+                          : "tImage")
+                      }
+                      alt=""
+                      src={playerImage}
+                      style={{
+                        transform: `rotate(${45 + direction}deg)`,
+                      }}
+                    ></img>
+                    <div class="mapPlayerNumber">
+                      {this.props.allplayers[playerID].observer_slot}
+                    </div>
+                  </div>
+                )}
+                {this.props.allplayers[playerID].state.health === 0 && (
+                  <div
+                    class={
+                      "mapPlayerDead " +
+                      this.props.allplayers[playerID].team.toLowerCase()
+                    }
+                  >
+                    X
+                  </div>
+                )}
               </div>
             );
           }

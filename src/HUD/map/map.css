@@ -18,6 +18,20 @@
 }
 
 .mapPlayerActive {
+  filter: drop-shadow(-1px -1px 0px white) drop-shadow(1px -1px 0px white)
+    drop-shadow(1px 1px 0px white) drop-shadow(-1px 1px 0px white);
+  z-index: 999;
+}
+
+.mapPlayerAlive {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.mapPlayerDead {
+  display: grid;
+  font-family: "Concert One";
 }
 
 .mapPlayerImage {
