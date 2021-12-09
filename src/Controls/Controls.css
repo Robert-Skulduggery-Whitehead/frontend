@@ -1,0 +1,25 @@
+.controlsContainer {
+  position: fixed;
+  width: 960px;
+  height: 540px;
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  left: 480px;
+  top: 5px;
+  font-size: 12px;
+}
+
+.teamsForm {
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.line {
+  width: 960px;
+}
