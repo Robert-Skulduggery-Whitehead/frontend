@@ -18,8 +18,8 @@ export default class SeriesInfo extends React.Component {
     if (this.props.round.phase === "freezetime") {
       return (
         <div class={"seriesInfo seriesInfo" + this.props.series.bestOf}>
-          <div class="seriesInfo3 seriesInfo">
-            {Object.keys(this.props.series.games).map((gameId) => {
+          {Object.keys(this.props.series.games).map((gameId) => {
+            if (parseInt(gameId.substring(4, 5)) <= this.props.series.bestOf) {
               return (
                 <div class="seriesMapInfo">
                   <div class="seriesMapInfoTop">
@@ -69,8 +69,8 @@ export default class SeriesInfo extends React.Component {
                   </div>
                 </div>
               );
-            })}
-          </div>
+            }
+          })}
         </div>
       );
     } else {

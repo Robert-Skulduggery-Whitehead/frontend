@@ -64,8 +64,8 @@ export default class Layout extends React.Component {
             map: "inferno",
             picked: "decider",
             winner: "",
-            winnerScore: 16,
-            loserScore: 7,
+            winnerScore: "",
+            loserScore: "",
           },
         },
       },
@@ -159,6 +159,43 @@ export default class Layout extends React.Component {
 
     socket.on("swapTeams", () => {
       this.swapTeams();
+    });
+
+    socket.on("getTeams", (teams) => {
+      this.setState({
+        teams: {
+          left: teams[0],
+          right: teams[1],
+        },
+      });
+    });
+
+    socket.on("getSeriesInfo", (seriesInfo) => {
+      this.setState({
+        series: {
+          bestOf: seriesInfo[0],
+          games: seriesInfo[1],
+        },
+      });
+      let tempTeams = this.state.teams;
+      let tempCurrent = 1;
+      for (let game in this.state.games) {
+        if (this.state.games[game].winner === this.state.teams.left.name) {
+          tempTeams.left.wins = tempTeams.left.wins + 1;
+          tempCurrent++;
+        } else if (
+          this.state.games[game].winner === this.state.teams.right.name
+        ) {
+          tempTeams.right.wins = tempTeams.right.wins + 1;
+          tempCurrent++;
+        }
+      }
+      let tempSeries = this.state.series;
+      tempSeries.current = tempCurrent;
+      this.setState({
+        teams: tempTeams,
+        series: tempSeries,
+      });
     });
   }
 

@@ -51,7 +51,10 @@ export default class GameInfo extends React.Component {
                 ></div>
               );
             } else {
-              if (gameNo !== "game" + this.props.series.bestOf) {
+              if (
+                parseInt(gameNo.substring(4, 5)) <=
+                Math.ceil(this.props.series.bestOf / 2)
+              ) {
                 return <div key={gameNo} class="seriesDot"></div>;
               }
             }
@@ -77,7 +80,10 @@ export default class GameInfo extends React.Component {
                 ></div>
               );
             } else {
-              if (gameNo !== "game" + this.props.series.bestOf) {
+              if (
+                parseInt(gameNo.substring(4, 5)) <=
+                Math.ceil(this.props.series.bestOf / 2)
+              ) {
                 return <div key={gameNo} class="seriesDot"></div>;
               }
             }
