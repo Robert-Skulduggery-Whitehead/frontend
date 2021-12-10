@@ -22,7 +22,7 @@ export default class PlayerAlive extends React.Component {
           {this.props.player.image === "" && (
             <img
               class="playerAliveImage"
-              src={"./teamImages/" + this.props.teamLogo}
+              src={"./playerImages/default.png"}
               alt=""
             ></img>
           )}
