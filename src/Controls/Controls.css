@@ -1,16 +1,22 @@
 .controlsContainer {
   position: fixed;
-  width: 960px;
-  height: 540px;
+  width: 1050px;
   display: grid;
   align-items: start;
   justify-items: start;
-  left: 480px;
+  left: 50px;
   top: 5px;
   font-size: 12px;
+  grid-template-columns: 500px 800px;
+  row-gap: 20px;
+  grid-template-areas:
+    "teams controls"
+    "games games";
+  column-gap: 50px;
 }
 
 .teamsForm {
+  grid-area: teams;
 }
 
 input[type="text"] {
@@ -21,5 +27,25 @@ input[type="text"] {
 }
 
 .line {
-  width: 960px;
+  width: 500px;
+}
+
+.controlsControlsContainer {
+  grid-area: controls;
+}
+
+.controlsGamesContainer {
+  grid-area: games;
+  display: grid;
+  grid-template-rows: 100px 400px 20px;
+  width: 500px;
+}
+
+.controlsGamesGameContainer {
+  width: 500px;
+  display: grid;
+  grid-template-columns: 66px 66px 66px 66px 66px 66px 66px;
+  align-items: center;
+  height: 50px;
+  column-gap: 6px;
 }

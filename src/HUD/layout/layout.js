@@ -37,7 +37,7 @@ export default class Layout extends React.Component {
         },
         right: {
           name: "ekasi esports",
-          img: "ekasiesports.png",
+          img: "ekasi esports.png",
           wins: 1,
         },
       },

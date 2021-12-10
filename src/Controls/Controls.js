@@ -180,7 +180,6 @@ export default class Controls extends React.Component {
 
   handleChange = (name) => (event) => {
     let games = this.state.games;
-    let temp = this.state[name.substr(0, 5)];
     games[name.substr(0, 5)][name.substr(5, name.length - 5)] =
       event.target.value;
     this.setState({
@@ -223,15 +222,17 @@ export default class Controls extends React.Component {
             Set Teams
           </button>
         </form>
+
+        <div class="controlsControlsContainer">
+          <h4>Controls</h4>
+          <button class onClick={this.swapTeams}>
+            Swap Teams
+          </button>
+        </div>
+
         {this.state.teamsSet && (
-          <div>
-            <hr class="line" />
-
-            <button onClick={this.swapTeams}>Swap Teams</button>
-
-            <hr class="line" />
-
-            <form onSubmit={this.handleSubmit}>
+          <form class="controlsGamesContainer" onSubmit={this.handleSubmit}>
+            <div>
               <h4>Game Info</h4>
               <label>
                 Best of:
@@ -242,9 +243,10 @@ export default class Controls extends React.Component {
                   onChange={this.handleChangeBestOf}
                 ></input>
               </label>
-              <hr class="line" />
+            </div>
+            <div class="controlsGamesGameContainer">
               {this.state.bestOfArray.map((x, i) => (
-                <div>
+                <div class="controlsGame">
                   <h5>{"Game " + (i + 1)}:</h5>
                   <label>Map</label>
                   <input
@@ -287,6 +289,8 @@ export default class Controls extends React.Component {
                   ></input>
                 </div>
               ))}
+            </div>
+            {this.state.bestOf !== 0 && this.state.bestOf !== "" && (
               <button
                 onClick={(e) => {
                   e.preventDefault();
@@ -295,8 +299,8 @@ export default class Controls extends React.Component {
               >
                 Set Series Info
               </button>
-            </form>
-          </div>
+            )}
+          </form>
         )}
       </div>
     );
