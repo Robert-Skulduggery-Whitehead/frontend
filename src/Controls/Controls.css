@@ -37,14 +37,14 @@ input[type="text"] {
 .controlsGamesContainer {
   grid-area: games;
   display: grid;
-  grid-template-rows: 100px 400px 20px;
+  grid-template-rows: 70px 260px 20px;
   width: 500px;
 }
 
 .controlsGamesGameContainer {
   width: 500px;
   display: grid;
-  grid-template-columns: 66px 66px 66px 66px 66px 66px 66px;
+  grid-template-columns: 180px 180px 180px 180px 180px 180px 180px 180px;
   align-items: center;
   height: 50px;
   column-gap: 6px;

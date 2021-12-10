@@ -190,6 +190,7 @@ export default class Controls extends React.Component {
   handleSubmit() {}
 
   render() {
+    console.log(this.state.games);
     return (
       //best of x, map picks, map winners,
       <div class="controlsContainer">
@@ -234,41 +235,66 @@ export default class Controls extends React.Component {
           <form class="controlsGamesContainer" onSubmit={this.handleSubmit}>
             <div>
               <h4>Game Info</h4>
-              <label>
-                Best of:
-                <input
-                  type="text"
-                  name="BestOf"
-                  value={this.state.bestOf || ""}
-                  onChange={this.handleChangeBestOf}
-                ></input>
-              </label>
+              <select
+                id="bestOf"
+                name="bestOf"
+                onChange={this.handleChangeBestOf}
+              >
+                <option value="">Best Of</option>
+                <option value="1">Best Of 1</option>
+                <option value="3">Best Of 3</option>
+                <option value="5">Best Of 5</option>
+              </select>
             </div>
             <div class="controlsGamesGameContainer">
               {this.state.bestOfArray.map((x, i) => (
                 <div class="controlsGame">
                   <h5>{"Game " + (i + 1)}:</h5>
-                  <label>Map</label>
-                  <input
-                    type="text"
-                    name="GameMap"
-                    value={this.state.games["game" + (i + 1)].map || ""}
+                  <select
+                    id="map"
+                    name="GameMapSelect"
                     onChange={this.handleChange("game" + (i + 1) + "map")}
-                  ></input>
-                  <label>Picked By</label>
-                  <input
-                    type="text"
-                    name="GamePicked"
-                    value={this.state.games["game" + (i + 1)].picked || ""}
+                  >
+                    <option value="">Select a map</option>
+                    <option value="vertigo">Vertigo</option>
+                    <option value="mirage">Mirage</option>
+                    <option value="inferno">Inferno</option>
+                    <option value="overpass">Overpass</option>
+                    <option value="nuke">Nuke</option>
+                    <option value="dust2">Dust2</option>
+                    <option value="ancient">Ancient</option>
+                  </select>
+                  <select
+                    id="teamPicked"
+                    name="teamPicked"
                     onChange={this.handleChange("game" + (i + 1) + "picked")}
-                  ></input>
-                  <label>Winner</label>
-                  <input
-                    type="text"
-                    name="Winner"
-                    value={this.state.games["game" + (i + 1)].winner || ""}
+                  >
+                    <option value="">Team that picked map</option>
+                    <option value={this.state.teamLeft.name}>
+                      {this.state.teamLeft.name}
+                    </option>
+                    <option value={this.state.teamRight.name}>
+                      {this.state.teamRight.name}
+                    </option>
+                    <option value="Decider">Decider</option>
+                  </select>
+                  <select
+                    id="teamWinner"
+                    name="teamWinner"
                     onChange={this.handleChange("game" + (i + 1) + "winner")}
-                  ></input>
+                  >
+                    <option value="">Winner</option>
+                    <option value={this.state.teamLeft.name}>
+                      {this.state.teamLeft.name}
+                    </option>
+                    <option value={this.state.teamRight.name}>
+                      {this.state.teamRight.name}
+                    </option>
+                    <option value="Current">Currently playing</option>
+                  </select>
+
+                  <br />
+                  <br />
                   <label>Winner Score</label>
                   <input
                     type="text"
