@@ -89,7 +89,7 @@ export default class EconomyBar extends React.Component {
         >
           <div class="economyBarTeamLogoContainer">
             <img
-              class={"economyBarTeamLogo " + this.props.team + "Image"}
+              class={"economyBarTeamLogo"}
               src={
                 "./svgs/logo_" + this.props.team.toUpperCase() + "_default.png"
               }
