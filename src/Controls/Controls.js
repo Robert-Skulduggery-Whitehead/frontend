@@ -190,7 +190,6 @@ export default class Controls extends React.Component {
   handleSubmit() {}
 
   render() {
-    console.log(this.state.games);
     return (
       //best of x, map picks, map winners,
       <div class="controlsContainer">
