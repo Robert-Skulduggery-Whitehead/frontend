@@ -73,6 +73,7 @@ export default class Controls extends React.Component {
         img: null,
       },
       teamsSet: false,
+      hudToggle: "hidden",
     };
   }
 
@@ -92,6 +93,18 @@ export default class Controls extends React.Component {
         teamLeft: left,
         teamRight: right,
       });
+    });
+
+    socket.on("getToggleHUD", () => {
+      if (this.state.hudToggle === "showing") {
+        this.setState({
+          toggleHUD: "hidden",
+        });
+      } else {
+        this.setState({
+          toggleHUD: "showing",
+        });
+      }
     });
 
     socket.on("getSeriesInfo", (seriesInfo) => {
@@ -187,7 +200,9 @@ export default class Controls extends React.Component {
     });
   };
 
-  handleSubmit() {}
+  toggleHud() {
+    socket.emit("toggleHUD");
+  }
 
   render() {
     return (
@@ -227,6 +242,10 @@ export default class Controls extends React.Component {
           <h4>Controls</h4>
           <button class onClick={this.swapTeams}>
             Swap Teams
+          </button>
+          <button class onClick={this.toggleHud}>
+            {this.state.hudToggle === "hidden" && <span>Show HUD</span>}
+            {this.state.hudToggle === "showing" && <span>Hide HUD</span>}
           </button>
         </div>
 
