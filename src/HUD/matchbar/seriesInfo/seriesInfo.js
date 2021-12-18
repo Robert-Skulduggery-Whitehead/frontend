@@ -24,35 +24,36 @@ export default class SeriesInfo extends React.Component {
                 <div class="seriesMapInfo">
                   <div class="seriesMapInfoTop">
                     {this.props.series.games[gameId].map}{" "}
-                    {this.props.series.games[gameId].winner !== "" && (
-                      <span>
-                        <img
-                          class="seriesMapInfoImage"
-                          src={"./teamImages/" + this.props.teams.left.img}
-                          alt=""
-                        ></img>
-                        {this.props.teams.left.name ===
-                          this.props.series.games[gameId].winner && (
-                          <span>
-                            {this.props.series.games[gameId].winnerScore}-
-                            {this.props.series.games[gameId].loserScore}
-                          </span>
-                        )}
-                        {this.props.teams.right.name ===
-                          this.props.series.games[gameId].winner && (
-                          <span>
-                            {this.props.series.games[gameId].loserScore}-
-                            {this.props.series.games[gameId].winnerScore}
-                          </span>
-                        )}
-                        <img
-                          class="seriesMapInfoImage"
-                          src={"./teamImages/" + this.props.teams.right.img}
-                          alt=""
-                        ></img>
-                      </span>
-                    )}
-                    {this.props.series.games[gameId].winner === "" && (
+                    {this.props.series.games[gameId].winner !== "current" &&
+                      this.props.series.games[gameId].winner !== "tbp" && (
+                        <span>
+                          <img
+                            class="seriesMapInfoImage"
+                            src={"./teamImages/" + this.props.teams.left.img}
+                            alt=""
+                          ></img>
+                          {this.props.teams.left.name ===
+                            this.props.series.games[gameId].winner && (
+                            <span>
+                              {this.props.series.games[gameId].winnerScore}-
+                              {this.props.series.games[gameId].loserScore}
+                            </span>
+                          )}
+                          {this.props.teams.right.name ===
+                            this.props.series.games[gameId].winner && (
+                            <span>
+                              {this.props.series.games[gameId].loserScore}-
+                              {this.props.series.games[gameId].winnerScore}
+                            </span>
+                          )}
+                          <img
+                            class="seriesMapInfoImage"
+                            src={"./teamImages/" + this.props.teams.right.img}
+                            alt=""
+                          ></img>
+                        </span>
+                      )}
+                    {this.props.series.games[gameId].winner === "current" && (
                       <span class="seriesMapInfoCurrent">Current</span>
                     )}
                   </div>

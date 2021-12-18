@@ -30,6 +30,8 @@ export default class Map extends React.Component {
         map: "./maps/" + this.props.map.name + ".png",
       });
 
+      //
+
       if (this.props.map.name === "de_nuke") {
         this.setState({
           config: {
@@ -288,6 +290,64 @@ export default class Map extends React.Component {
             );
           }
         })}
+        {this.props.bomb.player === undefined && (
+          <div>
+            {this.props.bomb.position.split(",")[2] >
+              this.state.config.height && (
+              <div
+                class={"mapBomb"}
+                style={{
+                  transform: `translateX(${
+                    Math.round(
+                      this.props.bomb.position.split(",")[0] *
+                        this.state.config.pxPerUX -
+                        this.state.config.layer1.x
+                    ) / 2.5
+                  }px) translateY(${
+                    Math.round(
+                      this.props.bomb.position.split(",")[1] *
+                        this.state.config.pxPerUY -
+                        this.state.config.layer1.y
+                    ) / 2.5
+                  }px)`,
+                }}
+              >
+                <img
+                  class="mapBombImage"
+                  alt=""
+                  src={"./svgs/icon_bomb_default.svg"}
+                ></img>
+              </div>
+            )}
+            {this.props.bomb.position.split(",")[2] <
+              this.state.config.height && (
+              <div
+                class={"mapBomb"}
+                style={{
+                  transform: `translateX(${
+                    Math.round(
+                      this.props.bomb.position.split(",")[0] *
+                        this.state.config.pxPerUX -
+                        this.state.config.layer1.x
+                    ) / 2.5
+                  }px) translateY(${
+                    Math.round(
+                      this.props.bomb.position.split(",")[1] *
+                        this.state.config.pxPerUY -
+                        this.state.config.layer1.y
+                    ) / 2.5
+                  }px)`,
+                }}
+              >
+                <img
+                  class="mapBombImage"
+                  alt=""
+                  src={"./svgs/icon_bomb_default.png"}
+                ></img>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     );
   }

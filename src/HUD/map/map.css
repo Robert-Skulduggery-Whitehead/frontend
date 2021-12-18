@@ -46,3 +46,17 @@
   grid-area: 1 / 1 / 1 / 1;
   z-index: 1;
 }
+
+.mapBomb {
+  position: absolute;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  left: 50%;
+  top: 50%;
+}
+
+.mapBombImage {
+  width: 12px;
+  filter: var(--bomb-filter);
+}

@@ -289,7 +289,8 @@ export default class Controls extends React.Component {
                     <option value={this.state.teamRight.name}>
                       {this.state.teamRight.name}
                     </option>
-                    <option value="Current">Currently playing</option>
+                    <option value="current">Currently playing</option>
+                    <option value="tbp">Upcoming</option>
                   </select>
 
                   <br />
