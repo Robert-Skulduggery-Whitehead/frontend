@@ -74,6 +74,7 @@ export default class Controls extends React.Component {
       },
       teamsSet: false,
       hudToggle: "hidden",
+      playersToggle: "hidden",
     };
   }
 
@@ -98,11 +99,23 @@ export default class Controls extends React.Component {
     socket.on("getToggleHUD", () => {
       if (this.state.hudToggle === "showing") {
         this.setState({
-          toggleHUD: "hidden",
+          hudToggle: "hidden",
         });
       } else {
         this.setState({
-          toggleHUD: "showing",
+          hudToggle: "showing",
+        });
+      }
+    });
+
+    socket.on("getTogglePlayers", () => {
+      if (this.state.playersToggle === "showing") {
+        this.setState({
+          playersToggle: "hidden",
+        });
+      } else {
+        this.setState({
+          playersToggle: "showing",
         });
       }
     });
@@ -204,6 +217,10 @@ export default class Controls extends React.Component {
     socket.emit("toggleHUD");
   }
 
+  togglePlayers() {
+    socket.emit("togglePlayers");
+  }
+
   render() {
     return (
       //best of x, map picks, map winners,
@@ -246,6 +263,10 @@ export default class Controls extends React.Component {
           <button class onClick={this.toggleHud}>
             {this.state.hudToggle === "hidden" && <span>Show HUD</span>}
             {this.state.hudToggle === "showing" && <span>Hide HUD</span>}
+          </button>
+          <button class onClick={this.togglePlayers}>
+            {this.state.playersToggle === "hidden" && <span>Show HUD</span>}
+            {this.state.playersToggle === "showing" && <span>Hide HUD</span>}
           </button>
         </div>
 
