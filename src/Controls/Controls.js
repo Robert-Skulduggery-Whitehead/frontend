@@ -265,8 +265,12 @@ export default class Controls extends React.Component {
             {this.state.hudToggle === "showing" && <span>Hide HUD</span>}
           </button>
           <button class onClick={this.togglePlayers}>
-            {this.state.playersToggle === "hidden" && <span>Show HUD</span>}
-            {this.state.playersToggle === "showing" && <span>Hide HUD</span>}
+            {this.state.playersToggle === "hidden" && (
+              <span>Show Players Window</span>
+            )}
+            {this.state.playersToggle === "showing" && (
+              <span>Hide Players Window</span>
+            )}
           </button>
         </div>
 
